@@ -1,0 +1,159 @@
+{
+  "agent_id": "A42AF95EY65WN46XL49FF44MH47XY46P",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-14T17:46:54.147412",
+  "total_messages": 6,
+  "conversation_history": [
+    {
+      "timestamp": 1763122565808,
+      "role": "assistant",
+      "content": "Hello! I'm EventMaster Pro, your ",
+      "type": "text",
+      "metadata": {
+        "interrupt_mode": "interrupt",
+        "interrupt_timestamp": 1763122568053,
+        "interrupted": true,
+        "original": "Hello! I'm EventMaster Pro, your professional event planning consultant. How may I assist you with your event planning needs today?",
+        "source": "greeting"
+      },
+      "turn_id": 1
+    },
+    {
+      "timestamp": 1763122572430,
+      "role": "user",
+      "content": "",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": ""
+      },
+      "turn_id": 2
+    },
+    {
+      "timestamp": 1763122578452,
+      "role": "user",
+      "content": "Yeah, actually I'm planning to. For a birthday party for my kid.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 4
+    },
+    {
+      "timestamp": 1763122580902,
+      "role": "assistant",
+      "content": "A birthday party for your kid sounds like a fun event to plan. Which language would you prefer for our conversation - English or Hindi?",
+      "type": "text",
+      "metadata": {
+        "source": "llm"
+      },
+      "turn_id": 4
+    },
+    {
+      "timestamp": 1763122592431,
+      "role": "user",
+      "content": "I'd like to go for English.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 5
+    },
+    {
+      "timestamp": 1763122595231,
+      "role": "assistant",
+      "content": "English it is, then. \n So,you're planning a birthday party for your kid. Can you tell me a bit more about it?What type of party are you thinking of - is it a small gathering at home, or a bigger celebration with friends and family?\n Also,where are you planning to hold this party? Which city are you located in?",
+      "type": "text",
+      "metadata": {
+        "source": "llm"
+      },
+      "turn_id": 5
+    }
+  ],
+  "last_activity": 1763122595231,
+  "agent_info": {
+    "agent_id": "A42AF95EY65WN46XL49FF44MH47XY46P",
+    "message": "ok",
+    "start_ts": 1763122558,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AF95EY65WN46XL49FF44MH47XY46P\",\"channel\":\"event-planning-1763122556-v4k8eo\",\"contents\":[{\"content\":\"Hello! I'm EventMaster Pro, your \",\"metadata\":{\"interrupt_mode\":\"interrupt\",\"interrupt_timestamp\":1763122568053,\"interrupted\":true,\"original\":\"Hello! I'm EventMaster Pro, your professional event planning consultant. How may I assist you with your event planning needs today?\",\"source\":\"greeting\"},\"role\":\"assistant\",\"timestamp\":1763122565808,\"turn_id\":1},{\"content\":\"\",\"metadata\":{\"source\":\"asr\",\"user\":\"\"},\"role\":\"user\",\"timestamp\":1763122572430,\"turn_id\":2},{\"content\":\"Yeah, actually I'm planning to. For a birthday party for my kid.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763122578452,\"turn_id\":4},{\"content\":\"A birthday party for your kid sounds like a fun event to plan. Which language would you prefer for our conversation - English or Hindi?\",\"metadata\":{\"source\":\"llm\"},\"role\":\"assistant\",\"timestamp\":1763122580902,\"turn_id\":4},{\"content\":\"I'd like to go for English.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763122592431,\"turn_id\":5},{\"content\":\"English it is, then. \\n So,you're planning a birthday party for your kid. Can you tell me a bit more about it?What type of party are you thinking of - is it a small gathering at home, or a bigger celebration with friends and family?\\n Also,where are you planning to hold this party? Which city are you located in?\",\"metadata\":{\"source\":\"llm\"},\"role\":\"assistant\",\"timestamp\":1763122595231,\"turn_id\":5}],\"start_ts\":1763122558,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AF95EY65WN46XL49FF44MH47XY46P",
+      "channel": "event-planning-1763122556-v4k8eo",
+      "contents": [
+        {
+          "content": "Hello! I'm EventMaster Pro, your ",
+          "metadata": {
+            "interrupt_mode": "interrupt",
+            "interrupt_timestamp": 1763122568053,
+            "interrupted": true,
+            "original": "Hello! I'm EventMaster Pro, your professional event planning consultant. How may I assist you with your event planning needs today?",
+            "source": "greeting"
+          },
+          "role": "assistant",
+          "timestamp": 1763122565808,
+          "turn_id": 1
+        },
+        {
+          "content": "",
+          "metadata": {
+            "source": "asr",
+            "user": ""
+          },
+          "role": "user",
+          "timestamp": 1763122572430,
+          "turn_id": 2
+        },
+        {
+          "content": "Yeah, actually I'm planning to. For a birthday party for my kid.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763122578452,
+          "turn_id": 4
+        },
+        {
+          "content": "A birthday party for your kid sounds like a fun event to plan. Which language would you prefer for our conversation - English or Hindi?",
+          "metadata": {
+            "source": "llm"
+          },
+          "role": "assistant",
+          "timestamp": 1763122580902,
+          "turn_id": 4
+        },
+        {
+          "content": "I'd like to go for English.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763122592431,
+          "turn_id": 5
+        },
+        {
+          "content": "English it is, then. \n So,you're planning a birthday party for your kid. Can you tell me a bit more about it?What type of party are you thinking of - is it a small gathering at home, or a bigger celebration with friends and family?\n Also,where are you planning to hold this party? Which city are you located in?",
+          "metadata": {
+            "source": "llm"
+          },
+          "role": "assistant",
+          "timestamp": 1763122595231,
+          "turn_id": 5
+        }
+      ],
+      "start_ts": 1763122558,
+      "status": "RUNNING"
+    }
+  }
+}

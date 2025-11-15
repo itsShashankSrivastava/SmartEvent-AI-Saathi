@@ -1,0 +1,1101 @@
+{
+  "cities": {
+    "delhi": {
+      "name": "Delhi",
+      "state": "Delhi",
+      "areas": {
+        "connaught_place": {
+          "name": "Connaught Place",
+          "venues": [
+            {
+              "name": "The Imperial Banquet Hall",
+              "address": "Block A-15, Connaught Place, New Delhi - 110001",
+              "capacity": 150,
+              "price_range": "₹45,000 - ₹75,000",
+              "amenities": [
+                "Central AC",
+                "Valet Parking",
+                "Sound System",
+                "Stage",
+                "Bridal Room"
+              ],
+              "contact": "+91-11-23412345",
+              "email": "bookings@imperialbanquet.com",
+              "rating": 4.2,
+              "suitable_for": [
+                "wedding",
+                "corporate",
+                "birthday",
+                "anniversary",
+                "engagement"
+              ]
+            },
+            {
+              "name": "Royal Garden Restaurant & Banquet",
+              "address": "Inner Circle, Connaught Place, New Delhi - 110001",
+              "capacity": 80,
+              "price_range": "₹25,000 - ₹40,000",
+              "amenities": [
+                "Garden Area",
+                "Indoor Hall",
+                "Catering Kitchen",
+                "Parking"
+              ],
+              "contact": "+91-11-23456789",
+              "email": "events@royalgarden.in",
+              "rating": 3.8,
+              "suitable_for": [
+                "birthday",
+                "family_gathering",
+                "small_wedding",
+                "baby_shower"
+              ]
+            },
+            {
+              "name": "Metro Convention Center",
+              "address": "Outer Circle, Connaught Place, New Delhi - 110001",
+              "capacity": 300,
+              "price_range": "₹85,000 - ₹1,50,000",
+              "amenities": [
+                "Conference Setup",
+                "AV Equipment",
+                "WiFi",
+                "Business Lounge",
+                "Catering"
+              ],
+              "contact": "+91-11-23567890",
+              "email": "corporate@metroconvention.com",
+              "rating": 4.5,
+              "suitable_for": [
+                "corporate",
+                "conference",
+                "seminar",
+                "product_launch",
+                "awards_ceremony"
+              ]
+            }
+          ],
+          "vendors": {
+            "flowers": [
+              {
+                "name": "Bloom & Petals Florists",
+                "speciality": "Wedding & Event Decorations",
+                "price_range": "₹8,000 - ₹35,000",
+                "services": [
+                  "Bridal Bouquets",
+                  "Mandap Decoration",
+                  "Car Decoration",
+                  "Stage Backdrop"
+                ],
+                "contact": "+91-9876543210",
+                "email": "orders@bloomandpetals.com",
+                "address": "Shop 12, Palika Bazaar, CP",
+                "rating": 4.1,
+                "experience_years": 8
+              },
+              {
+                "name": "Rose Garden Decorators",
+                "speciality": "Corporate & Theme Events",
+                "price_range": "₹12,000 - ₹50,000",
+                "services": [
+                  "Corporate Events",
+                  "Theme Decorations",
+                  "Entrance Gates",
+                  "Table Arrangements"
+                ],
+                "contact": "+91-9876543211",
+                "email": "info@rosegarden.co.in",
+                "address": "15, Janpath Market, New Delhi",
+                "rating": 4.3,
+                "experience_years": 12
+              }
+            ],
+            "decoration": [
+              {
+                "name": "Creative Event Designers",
+                "speciality": "Theme Based Decorations",
+                "price_range": "₹20,000 - ₹1,20,000",
+                "services": [
+                  "Theme Setup",
+                  "Balloon Decorations",
+                  "LED Lighting",
+                  "Stage Design",
+                  "Photo Booth"
+                ],
+                "contact": "+91-9876543212",
+                "email": "creative@eventdesigners.in",
+                "address": "B-42, Karol Bagh, New Delhi",
+                "rating": 4.4,
+                "experience_years": 10
+              },
+              {
+                "name": "Elegant Occasions",
+                "speciality": "Luxury Wedding Decorations",
+                "price_range": "₹50,000 - ₹3,00,000",
+                "services": [
+                  "Premium Decor",
+                  "Floral Arrangements",
+                  "Draping",
+                  "Crystal Decorations"
+                ],
+                "contact": "+91-9876543213",
+                "email": "bookings@elegantoccasions.com",
+                "address": "Greater Kailash Part 1, New Delhi",
+                "rating": 4.6,
+                "experience_years": 15
+              }
+            ],
+            "food": [
+              {
+                "name": "Spice Route Catering Services",
+                "speciality": "North Indian & Mughlai Cuisine",
+                "price_range": "₹350 - ₹800 per person",
+                "services": [
+                  "Live Counters",
+                  "Multi-cuisine Buffet",
+                  "Traditional Thali",
+                  "Dessert Counter"
+                ],
+                "contact": "+91-9876543214",
+                "email": "orders@spiceroute.co.in",
+                "address": "Lajpat Nagar, New Delhi",
+                "rating": 4.2,
+                "experience_years": 18,
+                "min_order": 50
+              },
+              {
+                "name": "Royal Kitchen Caterers",
+                "speciality": "Premium Multi-cuisine",
+                "price_range": "₹600 - ₹1,500 per person",
+                "services": [
+                  "International Cuisine",
+                  "Live Pasta Counter",
+                  "Sushi Bar",
+                  "Premium Bar"
+                ],
+                "contact": "+91-9876543215",
+                "email": "events@royalkitchen.in",
+                "address": "Defence Colony, New Delhi",
+                "rating": 4.5,
+                "experience_years": 22,
+                "min_order": 100
+              }
+            ],
+            "music_dj": [
+              {
+                "name": "Beats & Rhythms Entertainment",
+                "speciality": "Wedding & Party DJ",
+                "price_range": "₹15,000 - ₹45,000",
+                "services": [
+                  "DJ Services",
+                  "Sound System",
+                  "Lighting",
+                  "Karaoke",
+                  "Live Band"
+                ],
+                "contact": "+91-9876543216",
+                "email": "bookings@beatsrhythms.com",
+                "address": "Rajouri Garden, New Delhi",
+                "rating": 4.3,
+                "experience_years": 7
+              },
+              {
+                "name": "Symphony Music Productions",
+                "speciality": "Live Orchestra & Classical Music",
+                "price_range": "₹25,000 - ₹80,000",
+                "services": [
+                  "Live Orchestra",
+                  "Classical Performances",
+                  "Ghazal Nights",
+                  "Instrumental Music"
+                ],
+                "contact": "+91-9876543217",
+                "email": "info@symphonymusic.in",
+                "address": "Vasant Vihar, New Delhi",
+                "rating": 4.7,
+                "experience_years": 20
+              }
+            ],
+            "photography": [
+              {
+                "name": "Capture Moments Studio",
+                "speciality": "Wedding & Event Photography",
+                "price_range": "₹35,000 - ₹1,20,000",
+                "services": [
+                  "Pre-wedding Shoot",
+                  "Candid Photography",
+                  "Traditional Photography",
+                  "Videography",
+                  "Drone Shots"
+                ],
+                "contact": "+91-9876543218",
+                "email": "hello@capturemoments.co.in",
+                "address": "Lajpat Nagar, New Delhi",
+                "rating": 4.4,
+                "experience_years": 12
+              },
+              {
+                "name": "Pixel Perfect Productions",
+                "speciality": "Corporate & Commercial Photography",
+                "price_range": "₹20,000 - ₹75,000",
+                "services": [
+                  "Corporate Events",
+                  "Product Photography",
+                  "Conference Coverage",
+                  "Live Streaming"
+                ],
+                "contact": "+91-9876543219",
+                "email": "corporate@pixelperfect.in",
+                "address": "Nehru Place, New Delhi",
+                "rating": 4.2,
+                "experience_years": 9
+              }
+            ],
+            "transportation": [
+              {
+                "name": "Royal Rides Car Rental",
+                "speciality": "Luxury Car Rentals",
+                "price_range": "₹5,000 - ₹25,000 per day",
+                "services": [
+                  "Wedding Cars",
+                  "Corporate Transport",
+                  "Airport Transfers",
+                  "Luxury Sedans",
+                  "Vintage Cars"
+                ],
+                "contact": "+91-9876543220",
+                "email": "bookings@royalrides.co.in",
+                "address": "Karol Bagh, New Delhi",
+                "rating": 4.1,
+                "experience_years": 14
+              },
+              {
+                "name": "Metro Cab Services",
+                "speciality": "Group Transportation",
+                "price_range": "₹2,500 - ₹12,000 per day",
+                "services": [
+                  "Bus Rentals",
+                  "Tempo Traveller",
+                  "Group Transfers",
+                  "Outstation Trips"
+                ],
+                "contact": "+91-9876543221",
+                "email": "info@metrocabs.in",
+                "address": "Paharganj, New Delhi",
+                "rating": 3.9,
+                "experience_years": 11
+              }
+            ],
+            "makeup_artist": [
+              {
+                "name": "Glamour Studio by Priya",
+                "speciality": "Bridal & Party Makeup",
+                "price_range": "₹8,000 - ₹35,000",
+                "services": [
+                  "Bridal Makeup",
+                  "Party Makeup",
+                  "Hair Styling",
+                  "Mehendi Design",
+                  "Saree Draping"
+                ],
+                "contact": "+91-9876543222",
+                "email": "priya@glamourstudio.in",
+                "address": "Khan Market, New Delhi",
+                "rating": 4.5,
+                "experience_years": 8
+              }
+            ],
+            "tent_house": [
+              {
+                "name": "Delhi Tent & Decorators",
+                "speciality": "Wedding & Event Tents",
+                "price_range": "₹25,000 - ₹1,50,000",
+                "services": [
+                  "Shamiana Tents",
+                  "German Tents",
+                  "Pagoda Tents",
+                  "Furniture Rental",
+                  "Lighting"
+                ],
+                "contact": "+91-9876543223",
+                "email": "rentals@delhitents.com",
+                "address": "Mayapuri Industrial Area, New Delhi",
+                "rating": 4.0,
+                "experience_years": 25
+              }
+            ]
+          }
+        },
+        "karol_bagh": {
+          "name": "Karol Bagh",
+          "venues": [
+            {
+              "name": "Grand Celebration Banquet",
+              "address": "15/23, Dev Nagar, Karol Bagh, New Delhi - 110005",
+              "capacity": 200,
+              "price_range": "₹35,000 - ₹65,000",
+              "amenities": [
+                "Spacious Hall",
+                "Parking",
+                "Catering Kitchen",
+                "Green Room"
+              ],
+              "contact": "+91-11-25812345",
+              "email": "events@grandcelebration.in",
+              "rating": 4.0,
+              "suitable_for": [
+                "wedding",
+                "reception",
+                "birthday",
+                "anniversary"
+              ]
+            },
+            {
+              "name": "Metro Business Center",
+              "address": "Pusa Road, Karol Bagh, New Delhi - 110005",
+              "capacity": 120,
+              "price_range": "₹28,000 - ₹50,000",
+              "amenities": [
+                "Conference Setup",
+                "Projector",
+                "WiFi",
+                "Tea/Coffee Service"
+              ],
+              "contact": "+91-11-25823456",
+              "email": "corporate@metrobusiness.com",
+              "rating": 3.8,
+              "suitable_for": [
+                "corporate",
+                "seminar",
+                "training",
+                "workshop"
+              ]
+            }
+          ],
+          "vendors": {
+            "flowers": [
+              {
+                "name": "Karol Bagh Flower Market",
+                "speciality": "Fresh Daily Flowers",
+                "price_range": "₹3,000 - ₹18,000",
+                "services": [
+                  "Daily Fresh Flowers",
+                  "Bulk Orders",
+                  "Garland Making",
+                  "Simple Decorations"
+                ],
+                "contact": "+91-9876543224",
+                "email": "orders@kbflowers.in",
+                "address": "Flower Market, Karol Bagh",
+                "rating": 3.7,
+                "experience_years": 20
+              }
+            ],
+            "food": [
+              {
+                "name": "Punjabi Rasoi Caterers",
+                "speciality": "Authentic Punjabi Cuisine",
+                "price_range": "₹250 - ₹500 per person",
+                "services": [
+                  "Traditional Punjabi Food",
+                  "Tandoor Items",
+                  "Lassi Counter",
+                  "Kulfi"
+                ],
+                "contact": "+91-9876543225",
+                "email": "orders@punjabirasoi.co.in",
+                "address": "Ajmal Khan Road, Karol Bagh",
+                "rating": 4.1,
+                "experience_years": 16,
+                "min_order": 75
+              }
+            ]
+          }
+        }
+      }
+    },
+    "mumbai": {
+      "name": "Mumbai",
+      "state": "Maharashtra",
+      "areas": {
+        "bandra": {
+          "name": "Bandra",
+          "venues": [
+            {
+              "name": "Sea View Grand Banquet",
+              "address": "Hill Road, Bandra West, Mumbai - 400050",
+              "capacity": 250,
+              "price_range": "₹75,000 - ₹1,50,000",
+              "amenities": [
+                "Sea View",
+                "Valet Parking",
+                "Premium Decor",
+                "Bridal Suite",
+                "Dance Floor"
+              ],
+              "contact": "+91-22-26431234",
+              "email": "bookings@seaviewgrand.com",
+              "rating": 4.4,
+              "suitable_for": [
+                "wedding",
+                "reception",
+                "corporate",
+                "birthday"
+              ]
+            },
+            {
+              "name": "Bandra Business Hub",
+              "address": "Bandra Kurla Complex, Mumbai - 400051",
+              "capacity": 400,
+              "price_range": "₹1,20,000 - ₹2,80,000",
+              "amenities": [
+                "State-of-art AV",
+                "High-speed WiFi",
+                "Executive Lounge",
+                "Multiple Halls"
+              ],
+              "contact": "+91-22-26432345",
+              "email": "corporate@bandrabusiness.com",
+              "rating": 4.6,
+              "suitable_for": [
+                "corporate",
+                "conference",
+                "product_launch",
+                "awards"
+              ]
+            }
+          ],
+          "vendors": {
+            "flowers": [
+              {
+                "name": "Mumbai Flower Boutique",
+                "speciality": "Designer Floral Arrangements",
+                "price_range": "₹15,000 - ₹85,000",
+                "services": [
+                  "Exotic Flowers",
+                  "Designer Bouquets",
+                  "Event Styling",
+                  "Imported Flowers"
+                ],
+                "contact": "+91-9876543226",
+                "email": "designer@mumbaiflowers.com",
+                "address": "Linking Road, Bandra West",
+                "rating": 4.5,
+                "experience_years": 12
+              }
+            ],
+            "decoration": [
+              {
+                "name": "Bollywood Event Designers",
+                "speciality": "Glamorous & Celebrity Style Events",
+                "price_range": "₹60,000 - ₹5,00,000",
+                "services": [
+                  "Celebrity Style Decor",
+                  "LED Video Walls",
+                  "Designer Themes",
+                  "Red Carpet Setup"
+                ],
+                "contact": "+91-9876543227",
+                "email": "glam@bollywoodevents.in",
+                "address": "Juhu, Mumbai",
+                "rating": 4.7,
+                "experience_years": 18
+              }
+            ],
+            "food": [
+              {
+                "name": "Coastal Delights Catering",
+                "speciality": "Seafood & Continental Cuisine",
+                "price_range": "₹800 - ₹2,000 per person",
+                "services": [
+                  "Live Seafood Counter",
+                  "International Cuisine",
+                  "Premium Bar",
+                  "Molecular Gastronomy"
+                ],
+                "contact": "+91-9876543228",
+                "email": "chef@coastaldelights.in",
+                "address": "Bandra West, Mumbai",
+                "rating": 4.6,
+                "experience_years": 15,
+                "min_order": 100
+              }
+            ],
+            "music_dj": [
+              {
+                "name": "Mumbai Beats Entertainment",
+                "speciality": "Bollywood & Commercial Music",
+                "price_range": "₹25,000 - ₹1,20,000",
+                "services": [
+                  "Celebrity DJs",
+                  "Live Performances",
+                  "Sound & Lighting",
+                  "Dance Floor Setup"
+                ],
+                "contact": "+91-9876543229",
+                "email": "bookings@mumbaibeats.com",
+                "address": "Andheri West, Mumbai",
+                "rating": 4.4,
+                "experience_years": 10
+              }
+            ],
+            "transportation": [
+              {
+                "name": "Mumbai Luxury Cars",
+                "speciality": "Premium Wedding & Corporate Cars",
+                "price_range": "₹8,000 - ₹45,000 per day",
+                "services": [
+                  "BMW",
+                  "Mercedes",
+                  "Audi",
+                  "Vintage Cars",
+                  "Decorated Wedding Cars"
+                ],
+                "contact": "+91-9876543230",
+                "email": "luxury@mumbailuxurycars.com",
+                "address": "Bandra East, Mumbai",
+                "rating": 4.3,
+                "experience_years": 12
+              }
+            ]
+          }
+        },
+        "andheri": {
+          "name": "Andheri",
+          "venues": [
+            {
+              "name": "Andheri Convention Center",
+              "address": "Western Express Highway, Andheri East, Mumbai - 400069",
+              "capacity": 300,
+              "price_range": "₹55,000 - ₹1,10,000",
+              "amenities": [
+                "Highway Access",
+                "Large Parking",
+                "Modern Facilities",
+                "Multiple Rooms"
+              ],
+              "contact": "+91-22-26821234",
+              "email": "events@andhericonvention.com",
+              "rating": 4.1,
+              "suitable_for": [
+                "corporate",
+                "wedding",
+                "exhibition",
+                "conference"
+              ]
+            }
+          ],
+          "vendors": {
+            "photography": [
+              {
+                "name": "Andheri Photo Studio",
+                "speciality": "Fashion & Event Photography",
+                "price_range": "₹30,000 - ₹1,50,000",
+                "services": [
+                  "Fashion Photography",
+                  "Celebrity Events",
+                  "Corporate Shoots",
+                  "Advertising"
+                ],
+                "contact": "+91-9876543231",
+                "email": "studio@andheriphotography.com",
+                "address": "Versova, Andheri West",
+                "rating": 4.2,
+                "experience_years": 14
+              }
+            ]
+          }
+        }
+      }
+    },
+    "bangalore": {
+      "name": "Bangalore",
+      "state": "Karnataka",
+      "areas": {
+        "koramangala": {
+          "name": "Koramangala",
+          "venues": [
+            {
+              "name": "Garden City Grand",
+              "address": "5th Block, Koramangala, Bangalore - 560095",
+              "capacity": 180,
+              "price_range": "₹45,000 - ₹85,000",
+              "amenities": [
+                "Garden Setting",
+                "Indoor/Outdoor Options",
+                "Ample Parking",
+                "Modern Kitchen"
+              ],
+              "contact": "+91-80-41234567",
+              "email": "events@gardencitygrand.com",
+              "rating": 4.2,
+              "suitable_for": [
+                "wedding",
+                "birthday",
+                "corporate",
+                "reception"
+              ]
+            },
+            {
+              "name": "Tech Hub Conference Center",
+              "address": "Koramangala Industrial Layout, Bangalore - 560095",
+              "capacity": 220,
+              "price_range": "₹65,000 - ₹1,35,000",
+              "amenities": [
+                "High-tech Setup",
+                "Video Conferencing",
+                "Startup Friendly",
+                "Co-working Space"
+              ],
+              "contact": "+91-80-41235678",
+              "email": "corporate@techhub.co.in",
+              "rating": 4.5,
+              "suitable_for": [
+                "corporate",
+                "tech_events",
+                "startup_events",
+                "conferences"
+              ]
+            }
+          ],
+          "vendors": {
+            "flowers": [
+              {
+                "name": "Bangalore Blooms",
+                "speciality": "South Indian Traditional Decorations",
+                "price_range": "₹12,000 - ₹45,000",
+                "services": [
+                  "Jasmine Garlands",
+                  "Traditional Decorations",
+                  "Temple Style Arrangements",
+                  "Banana Leaf Decor"
+                ],
+                "contact": "+91-9876543232",
+                "email": "traditional@bangaloreblooms.in",
+                "address": "Commercial Street, Bangalore",
+                "rating": 4.3,
+                "experience_years": 16
+              }
+            ],
+            "food": [
+              {
+                "name": "South Spice Caterers",
+                "speciality": "Authentic South Indian Cuisine",
+                "price_range": "₹280 - ₹650 per person",
+                "services": [
+                  "Traditional Meals on Banana Leaf",
+                  "Filter Coffee",
+                  "Mysore Pak",
+                  "Live Dosa Counter"
+                ],
+                "contact": "+91-9876543233",
+                "email": "orders@southspice.co.in",
+                "address": "Indiranagar, Bangalore",
+                "rating": 4.4,
+                "experience_years": 20,
+                "min_order": 80
+              }
+            ],
+            "music_dj": [
+              {
+                "name": "Bangalore Music Company",
+                "speciality": "Classical & Fusion Music",
+                "price_range": "₹18,000 - ₹75,000",
+                "services": [
+                  "Classical Concerts",
+                  "Fusion Bands",
+                  "Carnatic Music",
+                  "Contemporary Music"
+                ],
+                "contact": "+91-9876543234",
+                "email": "music@bangaloremusic.com",
+                "address": "Jayanagar, Bangalore",
+                "rating": 4.6,
+                "experience_years": 22
+              }
+            ]
+          }
+        },
+        "whitefield": {
+          "name": "Whitefield",
+          "venues": [
+            {
+              "name": "IT Park Grand Convention",
+              "address": "ITPL Main Road, Whitefield, Bangalore - 560066",
+              "capacity": 350,
+              "price_range": "₹85,000 - ₹1,80,000",
+              "amenities": [
+                "Tech Infrastructure",
+                "Multiple Breakout Rooms",
+                "Executive Dining",
+                "Helipad Access"
+              ],
+              "contact": "+91-80-41236789",
+              "email": "corporate@itparkgrand.com",
+              "rating": 4.7,
+              "suitable_for": [
+                "corporate",
+                "tech_conferences",
+                "international_events",
+                "product_launches"
+              ]
+            }
+          ],
+          "vendors": {
+            "decoration": [
+              {
+                "name": "Modern Event Designers Bangalore",
+                "speciality": "Corporate & Tech Event Designs",
+                "price_range": "₹35,000 - ₹1,50,000",
+                "services": [
+                  "Minimalist Corporate Design",
+                  "Tech Integration",
+                  "Brand Activation",
+                  "Digital Displays"
+                ],
+                "contact": "+91-9876543235",
+                "email": "corporate@modernevents.co.in",
+                "address": "Whitefield, Bangalore",
+                "rating": 4.5,
+                "experience_years": 8
+              }
+            ]
+          }
+        }
+      }
+    },
+    "chennai": {
+      "name": "Chennai",
+      "state": "Tamil Nadu",
+      "areas": {
+        "t_nagar": {
+          "name": "T. Nagar",
+          "venues": [
+            {
+              "name": "Tamil Heritage Palace",
+              "address": "Pondy Bazaar Main Road, T. Nagar, Chennai - 600017",
+              "capacity": 400,
+              "price_range": "₹1,20,000 - ₹2,80,000",
+              "amenities": [
+                "Traditional Tamil Architecture",
+                "Mandap Hall",
+                "Large Parking",
+                "Central AC"
+              ],
+              "contact": "+91-44-24231234",
+              "email": "bookings@tamilheritage.com",
+              "rating": 4.3,
+              "suitable_for": [
+                "wedding",
+                "reception",
+                "cultural_events",
+                "religious_ceremonies"
+              ]
+            },
+            {
+              "name": "Marina View Banquet",
+              "address": "Near Panagal Park, T. Nagar, Chennai - 600017",
+              "capacity": 120,
+              "price_range": "₹35,000 - ₹70,000",
+              "amenities": [
+                "City View",
+                "Modern Amenities",
+                "Professional Kitchen",
+                "Parking"
+              ],
+              "contact": "+91-44-24232345",
+              "email": "events@marinaview.in",
+              "rating": 4.0,
+              "suitable_for": [
+                "birthday",
+                "anniversary",
+                "family_gathering",
+                "small_wedding"
+              ]
+            }
+          ],
+          "vendors": {
+            "flowers": [
+              {
+                "name": "Jasmine & Roses Chennai",
+                "speciality": "Traditional Tamil Wedding Flowers",
+                "price_range": "₹6,000 - ₹25,000",
+                "services": [
+                  "Fresh Jasmine Garlands",
+                  "Banana Leaf Decorations",
+                  "Temple Flowers",
+                  "Traditional Kolam"
+                ],
+                "contact": "+91-9876543236",
+                "email": "flowers@jasmineroses.co.in",
+                "address": "T. Nagar Flower Market, Chennai",
+                "rating": 4.2,
+                "experience_years": 25
+              }
+            ],
+            "food": [
+              {
+                "name": "Chettinad Authentic Catering",
+                "speciality": "Traditional Tamil & Chettinad Cuisine",
+                "price_range": "₹320 - ₹750 per person",
+                "services": [
+                  "Banana Leaf Meals",
+                  "Chettinad Specialties",
+                  "Filter Coffee",
+                  "Traditional Sweets"
+                ],
+                "contact": "+91-9876543237",
+                "email": "chef@chettinadcatering.com",
+                "address": "Mylapore, Chennai",
+                "rating": 4.5,
+                "experience_years": 30,
+                "min_order": 100
+              }
+            ],
+            "music_dj": [
+              {
+                "name": "Chennai Classical Music Academy",
+                "speciality": "Carnatic & Classical Music",
+                "price_range": "₹20,000 - ₹1,00,000",
+                "services": [
+                  "Carnatic Concerts",
+                  "Nadaswaram",
+                  "Traditional Instruments",
+                  "Cultural Programs"
+                ],
+                "contact": "+91-9876543238",
+                "email": "academy@chennaiclassical.org",
+                "address": "Mylapore, Chennai",
+                "rating": 4.8,
+                "experience_years": 35
+              }
+            ]
+          }
+        },
+        "adyar": {
+          "name": "Adyar",
+          "venues": [
+            {
+              "name": "IT Corridor Grand Convention",
+              "address": "OMR, Adyar, Chennai - 600020",
+              "capacity": 200,
+              "price_range": "₹60,000 - ₹1,25,000",
+              "amenities": [
+                "Modern Tech Setup",
+                "Sea Breeze",
+                "Executive Dining",
+                "High-speed Internet"
+              ],
+              "contact": "+91-44-24241234",
+              "email": "corporate@itcorridor.com",
+              "rating": 4.4,
+              "suitable_for": [
+                "corporate",
+                "tech_events",
+                "conferences",
+                "seminars"
+              ]
+            }
+          ],
+          "vendors": {
+            "decoration": [
+              {
+                "name": "South Indian Cultural Decorators",
+                "speciality": "Traditional & Cultural Event Decorations",
+                "price_range": "₹25,000 - ₹80,000",
+                "services": [
+                  "Traditional Themes",
+                  "Kolam Designs",
+                  "Cultural Setup",
+                  "Temple Style Decorations"
+                ],
+                "contact": "+91-9876543239",
+                "email": "cultural@southdecorators.in",
+                "address": "Adyar, Chennai",
+                "rating": 4.1,
+                "experience_years": 18
+              }
+            ]
+          }
+        }
+      }
+    },
+    "hyderabad": {
+      "name": "Hyderabad",
+      "state": "Telangana",
+      "areas": {
+        "hitech_city": {
+          "name": "Hitech City",
+          "venues": [
+            {
+              "name": "Cyberabad International Convention Center",
+              "address": "HITEC City Main Road, Hyderabad - 500081",
+              "capacity": 500,
+              "price_range": "₹1,50,000 - ₹3,50,000",
+              "amenities": [
+                "World-class Infrastructure",
+                "Multiple Conference Halls",
+                "Tech Support",
+                "International Standards"
+              ],
+              "contact": "+91-40-44231234",
+              "email": "international@cyberabadconvention.com",
+              "rating": 4.8,
+              "suitable_for": [
+                "corporate",
+                "international_conferences",
+                "tech_summits",
+                "exhibitions"
+              ]
+            },
+            {
+              "name": "Tech Park Celebration Hall",
+              "address": "Mindspace, HITEC City, Hyderabad - 500081",
+              "capacity": 150,
+              "price_range": "₹50,000 - ₹95,000",
+              "amenities": [
+                "Modern Design",
+                "City Skyline View",
+                "Premium Service",
+                "Tech Integration"
+              ],
+              "contact": "+91-40-44232345",
+              "email": "events@techparkcelebration.in",
+              "rating": 4.3,
+              "suitable_for": [
+                "corporate",
+                "birthday",
+                "anniversary",
+                "tech_parties"
+              ]
+            }
+          ],
+          "vendors": {
+            "food": [
+              {
+                "name": "Hyderabadi Biryani House Catering",
+                "speciality": "Authentic Hyderabadi Cuisine",
+                "price_range": "₹400 - ₹900 per person",
+                "services": [
+                  "Authentic Dum Biryani",
+                  "Haleem",
+                  "Qubani Ka Meetha",
+                  "Nizami Cuisine"
+                ],
+                "contact": "+91-9876543240",
+                "email": "orders@hyderabadbiryani.co.in",
+                "address": "Banjara Hills, Hyderabad",
+                "rating": 4.6,
+                "experience_years": 40,
+                "min_order": 75
+              }
+            ],
+            "decoration": [
+              {
+                "name": "Nizami Royal Decorators",
+                "speciality": "Royal & Heritage Theme Decorations",
+                "price_range": "₹45,000 - ₹2,50,000",
+                "services": [
+                  "Mughal Themes",
+                  "Royal Palace Setup",
+                  "Heritage Decorations",
+                  "Antique Props"
+                ],
+                "contact": "+91-9876543241",
+                "email": "royal@nizamidecorators.com",
+                "address": "Jubilee Hills, Hyderabad",
+                "rating": 4.7,
+                "experience_years": 28
+              }
+            ]
+          }
+        },
+        "jubilee_hills": {
+          "name": "Jubilee Hills",
+          "venues": [
+            {
+              "name": "Royal Jubilee Grand Palace",
+              "address": "Road No. 36, Jubilee Hills, Hyderabad - 500033",
+              "capacity": 800,
+              "price_range": "₹4,50,000 - ₹12,00,000",
+              "amenities": [
+                "Luxury Suites",
+                "Multiple Wedding Venues",
+                "Spa Services",
+                "Valet Parking",
+                "Helipad"
+              ],
+              "contact": "+91-40-44233456",
+              "email": "luxury@royaljubilee.com",
+              "rating": 4.9,
+              "suitable_for": [
+                "luxury_wedding",
+                "royal_reception",
+                "high_profile_events",
+                "celebrity_weddings"
+              ]
+            }
+          ],
+          "vendors": {
+            "flowers": [
+              {
+                "name": "Deccan Luxury Flower Arrangements",
+                "speciality": "Premium & Imported Flower Decorations",
+                "price_range": "₹35,000 - ₹1,50,000",
+                "services": [
+                  "Imported Flowers",
+                  "Designer Arrangements",
+                  "Luxury Event Styling",
+                  "Exotic Decorations"
+                ],
+                "contact": "+91-9876543242",
+                "email": "luxury@deccanflowers.com",
+                "address": "Banjara Hills, Hyderabad",
+                "rating": 4.8,
+                "experience_years": 15
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "vendor_categories": [
+    "flowers",
+    "decoration",
+    "food",
+    "photography",
+    "music_dj",
+    "transportation",
+    "makeup_artist",
+    "mehendi_artist",
+    "priest_pandit",
+    "security",
+    "cleaning",
+    "tent_house",
+    "lighting",
+    "sound_system",
+    "videography",
+    "anchor_host",
+    "dance_choreographer",
+    "fireworks",
+    "balloon_decoration",
+    "stage_setup"
+  ],
+  "price_ranges": {
+    "venues": {
+      "budget": "₹15,000 - ₹50,000",
+      "mid_range": "₹50,000 - ₹1,50,000",
+      "premium": "₹1,50,000 - ₹5,00,000",
+      "luxury": "₹5,00,000+"
+    },
+    "vendors": {
+      "flowers": "₹3,000 - ₹1,50,000",
+      "decoration": "₹15,000 - ₹5,00,000",
+      "food": "₹200 - ₹2,000 per person",
+      "photography": "₹20,000 - ₹2,00,000",
+      "music_dj": "₹15,000 - ₹1,50,000",
+      "transportation": "₹2,500 - ₹50,000 per day"
+    }
+  }
+}

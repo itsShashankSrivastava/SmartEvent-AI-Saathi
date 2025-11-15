@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+httpx
+pydantic
+agora-token-builder
+python-dotenv
+boto3
+websockets
+pyaudio
+matplotlib
+reportlab
+pandas
+openpyxl
+python-multipart
+requests

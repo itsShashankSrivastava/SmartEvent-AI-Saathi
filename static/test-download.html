@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Download Functionality</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-primary { background: #007bff; color: white; }
+        .btn-secondary { background: #6c757d; color: white; }
+        .btn-success { background: #28a745; color: white; }
+        button:hover { opacity: 0.8; }
+        .result {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Event Summary Download Test</h1>
+        
+        <p>This page tests the event summary generation and download functionality.</p>
+        
+        <div>
+            <button class="btn-primary" onclick="testSummaryGeneration()">
+                📊 Generate Test Summary
+            </button>
+            
+            <button class="btn-secondary" onclick="viewSummary()" id="viewBtn" disabled>
+                👁️ View Summary
+            </button>
+            
+            <button class="btn-success" onclick="downloadSummary()" id="downloadBtn" disabled>
+                📥 Download Summary
+            </button>
+        </div>
+        
+        <div id="result" class="result" style="display: none;">
+            <h3>Result:</h3>
+            <div id="resultContent"></div>
+        </div>
+        
+        <div id="preview" style="margin-top: 20px; display: none;">
+            <h3>Summary Preview:</h3>
+            <iframe id="summaryFrame" width="100%" height="600" frameborder="1" style="border: 1px solid #ddd;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        let currentFilename = null;
+        
+        async function testSummaryGeneration() {
+            try {
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('resultContent').innerHTML = '⏳ Generating summary...';
+                
+                // Use the existing conversation
+                const agentId = 'A42AE89XN64JN73LC66JF64JA77XM78K';
+                const response = await fetch(`${API_BASE}/summary/generate-from-agent/${agentId}`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    currentFilename = result.filename;
+                    
+                    document.getElementById('resultContent').innerHTML = `
+                        ✅ <strong>Summary generated successfully!</strong><br>
+                        📄 Filename: ${result.filename}<br>
+                        🎉 Event: ${result.event_details.event_type}<br>
+                        👥 Guests: ${result.event_details.guest_count}<br>
+                        📍 Venue: ${result.event_details.venue}<br>
+                        🏙️ City: ${result.event_details.city}
+                    `;
+                    
+                    document.getElementById('viewBtn').disabled = false;
+                    document.getElementById('downloadBtn').disabled = false;
+                } else {
+                    const error = await response.json();
+                    document.getElementById('resultContent').innerHTML = `❌ Error: ${error.detail}`;
+                }
+            } catch (error) {
+                document.getElementById('resultContent').innerHTML = `❌ Error: ${error.message}`;
+            }
+        }
+        
+        async function viewSummary() {
+            if (!currentFilename) return;
+            
+            try {
+                const summaryUrl = `${API_BASE}/summary/view/${currentFilename}`;
+                
+                // Show in iframe
+                document.getElementById('summaryFrame').src = summaryUrl;
+                document.getElementById('preview').style.display = 'block';
+                
+                // Also open in new tab
+                window.open(summaryUrl, '_blank');
+                
+            } catch (error) {
+                alert(`Error viewing summary: ${error.message}`);
+            }
+        }
+        
+        async function downloadSummary() {
+            if (!currentFilename) return;
+            
+            try {
+                const downloadUrl = `${API_BASE}/summary/download/${currentFilename}`;
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = currentFilename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                alert('📥 Summary downloaded! Check your Downloads folder.');
+                
+            } catch (error) {
+                alert(`Error downloading summary: ${error.message}`);
+            }
+        }
+    </script>
+</body>
+</html>

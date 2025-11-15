@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversational Event Planner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .status {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .event-details {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .event-details h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-details p {
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .voice-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .voice-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .voice-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .voice-btn.active {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Event Planner</h1>
+            <p>AI-powered event planning assistant</p>
+        </div>
+
+        <form id="eventForm">
+            <div class="form-group">
+                <label for="eventType">Event Type</label>
+                <select id="eventType" required>
+                    <option value="">Select event type...</option>
+                    <option value="birthday party">Birthday Party</option>
+                    <option value="corporate event">Corporate Event</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="family gathering">Family Gathering</option>
+                    <option value="community event">Community Event</option>
+                    <option value="group outing">Group Outing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="attendeeCount">Number of Attendees</label>
+                <input type="number" id="attendeeCount" min="1" max="1000" required>
+            </div>
+
+            <div class="form-group">
+                <label for="budgetRange">Budget Range</label>
+                <select id="budgetRange" required>
+                    <option value="">Select budget range...</option>
+                    <option value="$100-500">$100 - $500</option>
+                    <option value="$500-1000">$500 - $1,000</option>
+                    <option value="$1000-2500">$1,000 - $2,500</option>
+                    <option value="$2500-5000">$2,500 - $5,000</option>
+                    <option value="$5000+">$5,000+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="preferredDate">Preferred Date</label>
+                <input type="date" id="preferredDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location/Venue</label>
+                <input type="text" id="location" placeholder="e.g., Community Center, Downtown Area" required>
+            </div>
+
+            <button type="submit" class="btn" id="createEventBtn">
+                Create Event & Start Planning
+            </button>
+        </form>
+
+        <div id="status" class="status hidden"></div>
+
+        <div id="eventDetails" class="event-details hidden">
+            <h3>Event Created Successfully!</h3>
+            <p><strong>Event ID:</strong> <span id="eventId"></span></p>
+            <p><strong>Type:</strong> <span id="displayEventType"></span></p>
+            <p><strong>Attendees:</strong> <span id="displayAttendees"></span></p>
+            <p><strong>Budget:</strong> <span id="displayBudget"></span></p>
+            <p><strong>Date:</strong> <span id="displayDate"></span></p>
+            <p><strong>Location:</strong> <span id="displayLocation"></span></p>
+            
+            <div class="voice-controls">
+                <button type="button" class="voice-btn" id="startVoiceBtn">
+                    🎤 Start Voice Chat
+                </button>
+                <button type="button" class="voice-btn" id="getVenuesBtn">
+                    🏢 Get Venues
+                </button>
+                <button type="button" class="voice-btn" id="getBudgetBtn">
+                    💰 Get Budget
+                </button>
+            </div>
+        </div>
+
+        <div id="voiceStatus" class="status hidden"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        let currentEvent = null;
+        let agentId = null;
+
+        // Form submission
+        document.getElementById('eventForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                event_type: document.getElementById('eventType').value,
+                attendee_count: parseInt(document.getElementById('attendeeCount').value),
+                budget_range: document.getElementById('budgetRange').value,
+                preferred_date: document.getElementById('preferredDate').value,
+                location: document.getElementById('location').value
+            };
+
+            try {
+                showStatus('Creating event...', 'info');
+                
+                // Create event
+                const eventResponse = await fetch(`${API_BASE}/events/create`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!eventResponse.ok) {
+                    throw new Error('Failed to create event');
+                }
+
+                currentEvent = await eventResponse.json();
+                displayEventDetails(currentEvent);
+                showStatus('Event created successfully! You can now start voice planning.', 'success');
+
+            } catch (error) {
+                showStatus(`Error: ${error.message}`, 'error');
+            }
+        });
+
+        // Voice chat button
+        document.getElementById('startVoiceBtn').addEventListener('click', async () => {
+            if (!currentEvent) return;
+
+            try {
+                showVoiceStatus('Starting voice planning session...', 'info');
+
+                // Generate token first
+                const tokenResponse = await fetch(`${API_BASE}/token?uid=1234&channel=event-${currentEvent.event_id}`);
+                const tokenData = await tokenResponse.json();
+
+                // Start agent
+                const agentResponse = await fetch(`${API_BASE}/agent/invite`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        requester_id: '1234',
+                        channel_name: tokenData.channel,
+                        event_type: currentEvent.event_type,
+                        attendee_count: currentEvent.attendee_count,
+                        budget_range: currentEvent.budget_range
+                    })
+                });
+
+                if (agentResponse.ok) {
+                    const agentData = await agentResponse.json();
+                    agentId = agentData.agent_id;
+                    showVoiceStatus(`Voice assistant started! Agent ID: ${agentId}`, 'success');
+                    document.getElementById('startVoiceBtn').textContent = '🔴 Stop Voice Chat';
+                    document.getElementById('startVoiceBtn').classList.add('active');
+                } else {
+                    throw new Error('Failed to start voice assistant');
+                }
+
+            } catch (error) {
+                showVoiceStatus(`Voice Error: ${error.message}. Please check your API credentials.`, 'error');
+            }
+        });
+
+        // Get venues button
+        document.getElementById('getVenuesBtn').addEventListener('click', async () => {
+            if (!currentEvent) return;
+
+            try {
+                const response = await fetch(`${API_BASE}/events/venues/suggestions?event_type=${currentEvent.event_type}&attendee_count=${currentEvent.attendee_count}&budget_range=${currentEvent.budget_range}`);
+                const data = await response.json();
+
+                let venueText = `Found ${data.suggestions.length} venues:\n`;
+                data.suggestions.forEach((venue, i) => {
+                    venueText += `${i+1}. ${venue.name} (${venue.capacity} capacity, ${venue.price_range})\n`;
+                });
+
+                alert(venueText);
+            } catch (error) {
+                showStatus(`Error getting venues: ${error.message}`, 'error');
+            }
+        });
+
+        // Get budget button
+        document.getElementById('getBudgetBtn').addEventListener('click', async () => {
+            if (!currentEvent) return;
+
+            try {
+                const response = await fetch(`${API_BASE}/events/budget/estimate?event_type=${currentEvent.event_type}&attendee_count=${currentEvent.attendee_count}`);
+                const data = await response.json();
+
+                const budgetText = `Budget Estimate:\n\nTotal: $${data.final_estimate}\nPer Person: $${data.per_person_cost}\nBase Cost: $${data.base_total}\nContingency: $${data.contingency}`;
+
+                alert(budgetText);
+            } catch (error) {
+                showStatus(`Error getting budget: ${error.message}`, 'error');
+            }
+        });
+
+        function showStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.classList.remove('hidden');
+        }
+
+        function showVoiceStatus(message, type) {
+            const status = document.getElementById('voiceStatus');
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.classList.remove('hidden');
+        }
+
+        function displayEventDetails(event) {
+            document.getElementById('eventId').textContent = event.event_id;
+            document.getElementById('displayEventType').textContent = event.event_type;
+            document.getElementById('displayAttendees').textContent = event.attendee_count;
+            document.getElementById('displayBudget').textContent = event.budget_range;
+            document.getElementById('displayDate').textContent = event.preferred_date;
+            document.getElementById('displayLocation').textContent = event.location;
+            
+            document.getElementById('eventDetails').classList.remove('hidden');
+        }
+
+        // Set minimum date to today
+        document.getElementById('preferredDate').min = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>

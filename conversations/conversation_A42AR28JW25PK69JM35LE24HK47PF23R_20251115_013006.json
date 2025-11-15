@@ -1,0 +1,52 @@
+{
+  "agent_id": "A42AR28JW25PK69JM35LE24HK47PF23R",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-15T01:30:06.590109",
+  "total_messages": 1,
+  "conversation_history": [
+    {
+      "timestamp": 1763150395876,
+      "role": "user",
+      "content": "Hello. India, are you able to hear me? I want to plan a birthday party.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 2
+    }
+  ],
+  "last_activity": 1763150395876,
+  "agent_info": {
+    "agent_id": "A42AR28JW25PK69JM35LE24HK47PF23R",
+    "message": "ok",
+    "start_ts": 1763150366,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AR28JW25PK69JM35LE24HK47PF23R\",\"channel\":\"event-planning-1763150365-ay38be\",\"contents\":[{\"content\":\"Hello. India, are you able to hear me? I want to plan a birthday party.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763150395876,\"turn_id\":2}],\"start_ts\":1763150366,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AR28JW25PK69JM35LE24HK47PF23R",
+      "channel": "event-planning-1763150365-ay38be",
+      "contents": [
+        {
+          "content": "Hello. India, are you able to hear me? I want to plan a birthday party.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763150395876,
+          "turn_id": 2
+        }
+      ],
+      "start_ts": 1763150366,
+      "status": "RUNNING"
+    }
+  }
+}

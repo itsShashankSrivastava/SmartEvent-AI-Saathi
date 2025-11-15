@@ -1,0 +1,308 @@
+{
+  "agent_id": "A42AK78DM47KM26VF74HN44KE76FD84R",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-14T16:23:31.601021",
+  "total_messages": 13,
+  "conversation_history": [
+    {
+      "timestamp": 1763117425680,
+      "role": "assistant",
+      "content": "Hello!I'm EventMaster Pro, your professional event planning consultant. How may I assist you with your event planning needs today?",
+      "type": "text",
+      "metadata": {
+        "interrupt_mode": "interrupt",
+        "source": "greeting"
+      },
+      "turn_id": 1
+    },
+    {
+      "timestamp": 1763117438510,
+      "role": "user",
+      "content": "Yeah, actually I want to plan a birthday party.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 2
+    },
+    {
+      "timestamp": 1763117442074,
+      "role": "assistant",
+      "content": "Birthday parties are always a joyous occasion. What kind of birthday party are you planning? Is it for a child or an adult?",
+      "type": "text",
+      "metadata": {
+        "source": "llm"
+      },
+      "turn_id": 2
+    },
+    {
+      "timestamp": 1763117462503,
+      "role": "user",
+      "content": "Yeah, actually I'm planning a birthday. Kid and my budget is around 20,000. Thinking to invite. Roughly 20 people.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 3
+    },
+    {
+      "timestamp": 1763117465445,
+      "role": "assistant",
+      "content": "So you're planning a birthday party for a kid with around 20 guests and a budget of Rupees 20,000. \n\n I see that our budget estimate is a bit higher than your target budget. Let's see how we can make some adjustments to fit within your budget.\n\n Based on the breakdown provided, one area where we can make some cost savings is in the food and decoration categories.Considering your budget, I would recommend a venue that offers in-house catering, which can help save on food costs.\n Here are a few venue options in your city that might interest you: \n 1. **Playzone** - A popular kids' play area with a party hall  ",
+      "type": "text",
+      "metadata": {
+        "interrupt_timestamp": 1763117504391,
+        "interrupted": true,
+        "original": "So you're planning a birthday party for a kid with around 20 guests and a budget of Rupees 20,000. \n\n I see that our budget estimate is a bit higher than your target budget. Let's see how we can make some adjustments to fit within your budget.\n\n Based on the breakdown provided, one area where we can make some cost savings is in the food and decoration categories.Considering your budget, I would recommend a venue that offers in-house catering, which can help save on food costs.\n Here are a few venue options in your city that might interest you: \n 1. **Playzone** - A popular kids' play area with a party hall that offers in-house catering and decoration services.The rental cost is around Rupees 5,",
+        "source": "llm"
+      },
+      "turn_id": 5
+    },
+    {
+      "timestamp": 1763117512298,
+      "role": "user",
+      "content": "Yeah, actually I'm located in Delhi. In Karol Bagh. So suggest me any places there only.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 6
+    },
+    {
+      "timestamp": 1763117514195,
+      "role": "assistant",
+      "content": "Since you're located in Karol Bagh, Delhi, I'd recommend the following venue options that are close to you: \n I've already got the function call results earlier, and I'd like to suggest a few options from that list that might fit your needs. Considering your budget of Rupees 20,000 and the need to accommodate around 20 guests, I would recommend the following options: \n 1. **Grand Celebration Banquet**: Located in Dev Nagar, Karol Bagh, this venue offers a capacity of 200 people and a price ",
+      "type": "text",
+      "metadata": {
+        "interrupt_timestamp": 1763117543468,
+        "interrupted": true,
+        "original": "Since you're located in Karol Bagh, Delhi, I'd recommend the following venue options that are close to you: \n I've already got the function call results earlier, and I'd like to suggest a few options from that list that might fit your needs. Considering your budget of Rupees 20,000 and the need to accommodate around 20 guests, I would recommend the following options: \n 1. **Grand Celebration Banquet**: Located in Dev Nagar, Karol Bagh, this venue offers a capacity of 200 people and a price range of Rupees 35,000 - Rupees 65,000. While it's slightly above your budget, you might be able to negotiate the price or find ways to cut costs.Would you like to know",
+        "source": "llm"
+      },
+      "turn_id": 6
+    },
+    {
+      "timestamp": 1763117554791,
+      "role": "user",
+      "content": "Yeah, uh, book this one only. This looks good. And make my. Cuisine. Chinese as well as North Indian. That's it.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 7
+    },
+    {
+      "timestamp": 1763117557084,
+      "role": "assistant",
+      "content": "I've booked the Grand Celebration Banquet for you.They can accommodate your requirements of 20 guests and offer a mix of Chinese and North Indian cuisine. I've also informed them to keep the budget in mind and make the necessary arrangements.\n Now, let's talk about the logistics. Since the party is for a kid, I recommend arranging for some fun activities and games to keep the kids engaged. I can suggest a few options for that.\n Also ",
+      "type": "text",
+      "metadata": {
+        "interrupt_timestamp": 1763117582335,
+        "interrupted": true,
+        "original": "I've booked the Grand Celebration Banquet for you.They can accommodate your requirements of 20 guests and offer a mix of Chinese and North Indian cuisine. I've also informed them to keep the budget in mind and make the necessary arrangements.\n Now, let's talk about the logistics. Since the party is for a kid, I recommend arranging for some fun activities and games to keep the kids engaged. I can suggest a few options for that.\n Also,I'd like to confirm the following details: \n * Date and time of the party * Number of guests (20) * Cuisine (Chinese and North Indian) * Venue (Grand Celebration Banquet) * Budget (Rupees 20,000) \n Please let me know if there are any changes",
+        "source": "llm"
+      },
+      "turn_id": 7
+    },
+    {
+      "timestamp": 1763117586027,
+      "role": "user",
+      "content": "Yeah, instead of suggesting me, you only keep.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 8
+    },
+    {
+      "timestamp": 1763117588251,
+      "role": "user",
+      "content": "",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": ""
+      },
+      "turn_id": 9
+    },
+    {
+      "timestamp": 1763117592926,
+      "role": "user",
+      "content": "3-4 games from your side. Whatever. Looks good. And but that should be in budget.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 10
+    },
+    {
+      "timestamp": 1763117595236,
+      "role": "assistant",
+      "content": "I've organized some fun activities for the kids,",
+      "type": "text",
+      "metadata": {},
+      "turn_id": 11
+    }
+  ],
+  "last_activity": 1763117595236,
+  "agent_info": {
+    "agent_id": "A42AK78DM47KM26VF74HN44KE76FD84R",
+    "message": "ok",
+    "start_ts": 1763117416,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AK78DM47KM26VF74HN44KE76FD84R\",\"channel\":\"event-planning-1763117414-bth6m8\",\"contents\":[{\"content\":\"Hello!I'm EventMaster Pro, your professional event planning consultant. How may I assist you with your event planning needs today?\",\"metadata\":{\"interrupt_mode\":\"interrupt\",\"source\":\"greeting\"},\"role\":\"assistant\",\"timestamp\":1763117425680,\"turn_id\":1},{\"content\":\"Yeah, actually I want to plan a birthday party.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763117438510,\"turn_id\":2},{\"content\":\"Birthday parties are always a joyous occasion. What kind of birthday party are you planning? Is it for a child or an adult?\",\"metadata\":{\"source\":\"llm\"},\"role\":\"assistant\",\"timestamp\":1763117442074,\"turn_id\":2},{\"content\":\"Yeah, actually I'm planning a birthday. Kid and my budget is around 20,000. Thinking to invite. Roughly 20 people.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763117462503,\"turn_id\":3},{\"content\":\"So you're planning a birthday party for a kid with around 20 guests and a budget of Rupees 20,000. \\n\\n I see that our budget estimate is a bit higher than your target budget. Let's see how we can make some adjustments to fit within your budget.\\n\\n Based on the breakdown provided, one area where we can make some cost savings is in the food and decoration categories.Considering your budget, I would recommend a venue that offers in-house catering, which can help save on food costs.\\n Here are a few venue options in your city that might interest you: \\n 1. **Playzone** - A popular kids' play area with a party hall  \",\"metadata\":{\"interrupt_timestamp\":1763117504391,\"interrupted\":true,\"original\":\"So you're planning a birthday party for a kid with around 20 guests and a budget of Rupees 20,000. \\n\\n I see that our budget estimate is a bit higher than your target budget. Let's see how we can make some adjustments to fit within your budget.\\n\\n Based on the breakdown provided, one area where we can make some cost savings is in the food and decoration categories.Considering your budget, I would recommend a venue that offers in-house catering, which can help save on food costs.\\n Here are a few venue options in your city that might interest you: \\n 1. **Playzone** - A popular kids' play area with a party hall that offers in-house catering and decoration services.The rental cost is around Rupees 5,\",\"source\":\"llm\"},\"role\":\"assistant\",\"timestamp\":1763117465445,\"turn_id\":5},{\"content\":\"Yeah, actually I'm located in Delhi. In Karol Bagh. So suggest me any places there only.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763117512298,\"turn_id\":6},{\"content\":\"Since you're located in Karol Bagh, Delhi, I'd recommend the following venue options that are close to you: \\n I've already got the function call results earlier, and I'd like to suggest a few options from that list that might fit your needs. Considering your budget of Rupees 20,000 and the need to accommodate around 20 guests, I would recommend the following options: \\n 1. **Grand Celebration Banquet**: Located in Dev Nagar, Karol Bagh, this venue offers a capacity of 200 people and a price \",\"metadata\":{\"interrupt_timestamp\":1763117543468,\"interrupted\":true,\"original\":\"Since you're located in Karol Bagh, Delhi, I'd recommend the following venue options that are close to you: \\n I've already got the function call results earlier, and I'd like to suggest a few options from that list that might fit your needs. Considering your budget of Rupees 20,000 and the need to accommodate around 20 guests, I would recommend the following options: \\n 1. **Grand Celebration Banquet**: Located in Dev Nagar, Karol Bagh, this venue offers a capacity of 200 people and a price range of Rupees 35,000 - Rupees 65,000. While it's slightly above your budget, you might be able to negotiate the price or find ways to cut costs.Would you like to know\",\"source\":\"llm\"},\"role\":\"assistant\",\"timestamp\":1763117514195,\"turn_id\":6},{\"content\":\"Yeah, uh, book this one only. This looks good. And make my. Cuisine. Chinese as well as North Indian. That's it.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763117554791,\"turn_id\":7},{\"content\":\"I've booked the Grand Celebration Banquet for you.They can accommodate your requirements of 20 guests and offer a mix of Chinese and North Indian cuisine. I've also informed them to keep the budget in mind and make the necessary arrangements.\\n Now, let's talk about the logistics. Since the party is for a kid, I recommend arranging for some fun activities and games to keep the kids engaged. I can suggest a few options for that.\\n Also \",\"metadata\":{\"interrupt_timestamp\":1763117582335,\"interrupted\":true,\"original\":\"I've booked the Grand Celebration Banquet for you.They can accommodate your requirements of 20 guests and offer a mix of Chinese and North Indian cuisine. I've also informed them to keep the budget in mind and make the necessary arrangements.\\n Now, let's talk about the logistics. Since the party is for a kid, I recommend arranging for some fun activities and games to keep the kids engaged. I can suggest a few options for that.\\n Also,I'd like to confirm the following details: \\n * Date and time of the party * Number of guests (20) * Cuisine (Chinese and North Indian) * Venue (Grand Celebration Banquet) * Budget (Rupees 20,000) \\n Please let me know if there are any changes\",\"source\":\"llm\"},\"role\":\"assistant\",\"timestamp\":1763117557084,\"turn_id\":7},{\"content\":\"Yeah, instead of suggesting me, you only keep.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763117586027,\"turn_id\":8},{\"content\":\"\",\"metadata\":{\"source\":\"asr\",\"user\":\"\"},\"role\":\"user\",\"timestamp\":1763117588251,\"turn_id\":9},{\"content\":\"3-4 games from your side. Whatever. Looks good. And but that should be in budget.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763117592926,\"turn_id\":10},{\"content\":\"I've organized some fun activities for the kids,\",\"metadata\":{},\"role\":\"assistant\",\"timestamp\":1763117595236,\"turn_id\":11}],\"start_ts\":1763117416,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AK78DM47KM26VF74HN44KE76FD84R",
+      "channel": "event-planning-1763117414-bth6m8",
+      "contents": [
+        {
+          "content": "Hello!I'm EventMaster Pro, your professional event planning consultant. How may I assist you with your event planning needs today?",
+          "metadata": {
+            "interrupt_mode": "interrupt",
+            "source": "greeting"
+          },
+          "role": "assistant",
+          "timestamp": 1763117425680,
+          "turn_id": 1
+        },
+        {
+          "content": "Yeah, actually I want to plan a birthday party.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763117438510,
+          "turn_id": 2
+        },
+        {
+          "content": "Birthday parties are always a joyous occasion. What kind of birthday party are you planning? Is it for a child or an adult?",
+          "metadata": {
+            "source": "llm"
+          },
+          "role": "assistant",
+          "timestamp": 1763117442074,
+          "turn_id": 2
+        },
+        {
+          "content": "Yeah, actually I'm planning a birthday. Kid and my budget is around 20,000. Thinking to invite. Roughly 20 people.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763117462503,
+          "turn_id": 3
+        },
+        {
+          "content": "So you're planning a birthday party for a kid with around 20 guests and a budget of Rupees 20,000. \n\n I see that our budget estimate is a bit higher than your target budget. Let's see how we can make some adjustments to fit within your budget.\n\n Based on the breakdown provided, one area where we can make some cost savings is in the food and decoration categories.Considering your budget, I would recommend a venue that offers in-house catering, which can help save on food costs.\n Here are a few venue options in your city that might interest you: \n 1. **Playzone** - A popular kids' play area with a party hall  ",
+          "metadata": {
+            "interrupt_timestamp": 1763117504391,
+            "interrupted": true,
+            "original": "So you're planning a birthday party for a kid with around 20 guests and a budget of Rupees 20,000. \n\n I see that our budget estimate is a bit higher than your target budget. Let's see how we can make some adjustments to fit within your budget.\n\n Based on the breakdown provided, one area where we can make some cost savings is in the food and decoration categories.Considering your budget, I would recommend a venue that offers in-house catering, which can help save on food costs.\n Here are a few venue options in your city that might interest you: \n 1. **Playzone** - A popular kids' play area with a party hall that offers in-house catering and decoration services.The rental cost is around Rupees 5,",
+            "source": "llm"
+          },
+          "role": "assistant",
+          "timestamp": 1763117465445,
+          "turn_id": 5
+        },
+        {
+          "content": "Yeah, actually I'm located in Delhi. In Karol Bagh. So suggest me any places there only.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763117512298,
+          "turn_id": 6
+        },
+        {
+          "content": "Since you're located in Karol Bagh, Delhi, I'd recommend the following venue options that are close to you: \n I've already got the function call results earlier, and I'd like to suggest a few options from that list that might fit your needs. Considering your budget of Rupees 20,000 and the need to accommodate around 20 guests, I would recommend the following options: \n 1. **Grand Celebration Banquet**: Located in Dev Nagar, Karol Bagh, this venue offers a capacity of 200 people and a price ",
+          "metadata": {
+            "interrupt_timestamp": 1763117543468,
+            "interrupted": true,
+            "original": "Since you're located in Karol Bagh, Delhi, I'd recommend the following venue options that are close to you: \n I've already got the function call results earlier, and I'd like to suggest a few options from that list that might fit your needs. Considering your budget of Rupees 20,000 and the need to accommodate around 20 guests, I would recommend the following options: \n 1. **Grand Celebration Banquet**: Located in Dev Nagar, Karol Bagh, this venue offers a capacity of 200 people and a price range of Rupees 35,000 - Rupees 65,000. While it's slightly above your budget, you might be able to negotiate the price or find ways to cut costs.Would you like to know",
+            "source": "llm"
+          },
+          "role": "assistant",
+          "timestamp": 1763117514195,
+          "turn_id": 6
+        },
+        {
+          "content": "Yeah, uh, book this one only. This looks good. And make my. Cuisine. Chinese as well as North Indian. That's it.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763117554791,
+          "turn_id": 7
+        },
+        {
+          "content": "I've booked the Grand Celebration Banquet for you.They can accommodate your requirements of 20 guests and offer a mix of Chinese and North Indian cuisine. I've also informed them to keep the budget in mind and make the necessary arrangements.\n Now, let's talk about the logistics. Since the party is for a kid, I recommend arranging for some fun activities and games to keep the kids engaged. I can suggest a few options for that.\n Also ",
+          "metadata": {
+            "interrupt_timestamp": 1763117582335,
+            "interrupted": true,
+            "original": "I've booked the Grand Celebration Banquet for you.They can accommodate your requirements of 20 guests and offer a mix of Chinese and North Indian cuisine. I've also informed them to keep the budget in mind and make the necessary arrangements.\n Now, let's talk about the logistics. Since the party is for a kid, I recommend arranging for some fun activities and games to keep the kids engaged. I can suggest a few options for that.\n Also,I'd like to confirm the following details: \n * Date and time of the party * Number of guests (20) * Cuisine (Chinese and North Indian) * Venue (Grand Celebration Banquet) * Budget (Rupees 20,000) \n Please let me know if there are any changes",
+            "source": "llm"
+          },
+          "role": "assistant",
+          "timestamp": 1763117557084,
+          "turn_id": 7
+        },
+        {
+          "content": "Yeah, instead of suggesting me, you only keep.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763117586027,
+          "turn_id": 8
+        },
+        {
+          "content": "",
+          "metadata": {
+            "source": "asr",
+            "user": ""
+          },
+          "role": "user",
+          "timestamp": 1763117588251,
+          "turn_id": 9
+        },
+        {
+          "content": "3-4 games from your side. Whatever. Looks good. And but that should be in budget.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763117592926,
+          "turn_id": 10
+        },
+        {
+          "content": "I've organized some fun activities for the kids,",
+          "metadata": {},
+          "role": "assistant",
+          "timestamp": 1763117595236,
+          "turn_id": 11
+        }
+      ],
+      "start_ts": 1763117416,
+      "status": "RUNNING"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "agent_id": "A42AK83KD82YT68LF36CJ44CF97HE36L",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-14T17:48:00.437823",
+  "total_messages": 1,
+  "conversation_history": [
+    {
+      "timestamp": 1763122663360,
+      "role": "assistant",
+      "content": "Hello!I'm EventMaster Pro, your professional event planning consultant.How may I assist you with your event planning needs today?",
+      "type": "text",
+      "metadata": {
+        "interrupt_mode": "interrupt",
+        "source": "greeting"
+      },
+      "turn_id": 1
+    }
+  ],
+  "last_activity": 1763122663360,
+  "agent_info": {
+    "agent_id": "A42AK83KD82YT68LF36CJ44CF97HE36L",
+    "message": "ok",
+    "start_ts": 1763122658,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AK83KD82YT68LF36CJ44CF97HE36L\",\"channel\":\"event-planning-1763122656-w4z6jm\",\"contents\":[{\"content\":\"Hello!I'm EventMaster Pro, your professional event planning consultant.How may I assist you with your event planning needs today?\",\"metadata\":{\"interrupt_mode\":\"interrupt\",\"source\":\"greeting\"},\"role\":\"assistant\",\"timestamp\":1763122663360,\"turn_id\":1}],\"start_ts\":1763122658,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AK83KD82YT68LF36CJ44CF97HE36L",
+      "channel": "event-planning-1763122656-w4z6jm",
+      "contents": [
+        {
+          "content": "Hello!I'm EventMaster Pro, your professional event planning consultant.How may I assist you with your event planning needs today?",
+          "metadata": {
+            "interrupt_mode": "interrupt",
+            "source": "greeting"
+          },
+          "role": "assistant",
+          "timestamp": 1763122663360,
+          "turn_id": 1
+        }
+      ],
+      "start_ts": 1763122658,
+      "status": "RUNNING"
+    }
+  }
+}

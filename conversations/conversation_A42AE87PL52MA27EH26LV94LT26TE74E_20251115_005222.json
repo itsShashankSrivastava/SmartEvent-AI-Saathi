@@ -1,0 +1,52 @@
+{
+  "agent_id": "A42AE87PL52MA27EH26LV94LT26TE74E",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-15T00:52:22.576352",
+  "total_messages": 1,
+  "conversation_history": [
+    {
+      "timestamp": 1763148133449,
+      "role": "user",
+      "content": "Hello. Are you able to hear me?",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 2
+    }
+  ],
+  "last_activity": 1763148133449,
+  "agent_info": {
+    "agent_id": "A42AE87PL52MA27EH26LV94LT26TE74E",
+    "message": "ok",
+    "start_ts": 1763148107,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AE87PL52MA27EH26LV94LT26TE74E\",\"channel\":\"event-planning-1763148106-ugxxie\",\"contents\":[{\"content\":\"Hello. Are you able to hear me?\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763148133449,\"turn_id\":2}],\"start_ts\":1763148107,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AE87PL52MA27EH26LV94LT26TE74E",
+      "channel": "event-planning-1763148106-ugxxie",
+      "contents": [
+        {
+          "content": "Hello. Are you able to hear me?",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763148133449,
+          "turn_id": 2
+        }
+      ],
+      "start_ts": 1763148107,
+      "status": "RUNNING"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "agent_id": "A42AT78LR78PC44TF64NN74LT96JT25E",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-14T17:36:03.204354",
+  "total_messages": 3,
+  "conversation_history": [
+    {
+      "timestamp": 1763121908740,
+      "role": "assistant",
+      "content": "Hello! I'm EventMaster Pro, your professional event planning consultant.How may I assist you with your event planning needs today?",
+      "type": "text",
+      "metadata": {
+        "interrupt_mode": "interrupt",
+        "source": "greeting"
+      },
+      "turn_id": 1
+    },
+    {
+      "timestamp": 1763121930005,
+      "role": "user",
+      "content": "Yeah, actually I want to plan a birthday party for a kid. And my budget is around ₹20,000. And I am thinking to invite. 20 people.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 2
+    },
+    {
+      "timestamp": 1763121932728,
+      "role": "assistant",
+      "content": "Planning a birthday party for a kid can be so much fun.Based on your budget and requirements, I'd like to suggest some options for you. \n First, let's break down the estimated budget we got from our function call results. The total estimated budget for the party is Rupees 38,870, which is a bit higher than your initial budget of Rupees 20,000. However, I can help you prioritize and adjust accordingly. \n Considering your budget constraints, I recommend you focus on the essential aspects of the party, such as the venue, food, and decorations. Let's explore some options for these key areas. \n For the venue, I found a lovely spot called \"The Party Hall\" in your city.They offer a spacious area for 20",
+      "type": "text",
+      "metadata": {
+        "source": "llm"
+      },
+      "turn_id": 2
+    }
+  ],
+  "last_activity": 1763121932728,
+  "agent_info": {
+    "agent_id": "A42AT78LR78PC44TF64NN74LT96JT25E",
+    "message": "ok",
+    "start_ts": 1763121902,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AT78LR78PC44TF64NN74LT96JT25E\",\"channel\":\"event-planning-1763121900-h0mufm\",\"contents\":[{\"content\":\"Hello! I'm EventMaster Pro, your professional event planning consultant.How may I assist you with your event planning needs today?\",\"metadata\":{\"interrupt_mode\":\"interrupt\",\"source\":\"greeting\"},\"role\":\"assistant\",\"timestamp\":1763121908740,\"turn_id\":1},{\"content\":\"Yeah, actually I want to plan a birthday party for a kid. And my budget is around ₹20,000. And I am thinking to invite. 20 people.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763121930005,\"turn_id\":2},{\"content\":\"Planning a birthday party for a kid can be so much fun.Based on your budget and requirements, I'd like to suggest some options for you. \\n First, let's break down the estimated budget we got from our function call results. The total estimated budget for the party is Rupees 38,870, which is a bit higher than your initial budget of Rupees 20,000. However, I can help you prioritize and adjust accordingly. \\n Considering your budget constraints, I recommend you focus on the essential aspects of the party, such as the venue, food, and decorations. Let's explore some options for these key areas. \\n For the venue, I found a lovely spot called \\\"The Party Hall\\\" in your city.They offer a spacious area for 20\",\"metadata\":{\"source\":\"llm\"},\"role\":\"assistant\",\"timestamp\":1763121932728,\"turn_id\":2}],\"start_ts\":1763121902,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AT78LR78PC44TF64NN74LT96JT25E",
+      "channel": "event-planning-1763121900-h0mufm",
+      "contents": [
+        {
+          "content": "Hello! I'm EventMaster Pro, your professional event planning consultant.How may I assist you with your event planning needs today?",
+          "metadata": {
+            "interrupt_mode": "interrupt",
+            "source": "greeting"
+          },
+          "role": "assistant",
+          "timestamp": 1763121908740,
+          "turn_id": 1
+        },
+        {
+          "content": "Yeah, actually I want to plan a birthday party for a kid. And my budget is around ₹20,000. And I am thinking to invite. 20 people.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763121930005,
+          "turn_id": 2
+        },
+        {
+          "content": "Planning a birthday party for a kid can be so much fun.Based on your budget and requirements, I'd like to suggest some options for you. \n First, let's break down the estimated budget we got from our function call results. The total estimated budget for the party is Rupees 38,870, which is a bit higher than your initial budget of Rupees 20,000. However, I can help you prioritize and adjust accordingly. \n Considering your budget constraints, I recommend you focus on the essential aspects of the party, such as the venue, food, and decorations. Let's explore some options for these key areas. \n For the venue, I found a lovely spot called \"The Party Hall\" in your city.They offer a spacious area for 20",
+          "metadata": {
+            "source": "llm"
+          },
+          "role": "assistant",
+          "timestamp": 1763121932728,
+          "turn_id": 2
+        }
+      ],
+      "start_ts": 1763121902,
+      "status": "RUNNING"
+    }
+  }
+}

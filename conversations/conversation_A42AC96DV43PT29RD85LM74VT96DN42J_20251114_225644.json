@@ -1,0 +1,73 @@
+{
+  "agent_id": "A42AC96DV43PT29RD85LM74VT96DN42J",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-14T22:56:44.187875",
+  "total_messages": 2,
+  "conversation_history": [
+    {
+      "timestamp": 1763141179183,
+      "role": "user",
+      "content": "",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": ""
+      },
+      "turn_id": 2
+    },
+    {
+      "timestamp": 1763141200288,
+      "role": "user",
+      "content": "Hello. OK.",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": "12345"
+      },
+      "turn_id": 3
+    }
+  ],
+  "last_activity": 1763141200288,
+  "agent_info": {
+    "agent_id": "A42AC96DV43PT29RD85LM74VT96DN42J",
+    "message": "ok",
+    "start_ts": 1763141171,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AC96DV43PT29RD85LM74VT96DN42J\",\"channel\":\"event-planning-1763141170-5rlr7q\",\"contents\":[{\"content\":\"\",\"metadata\":{\"source\":\"asr\",\"user\":\"\"},\"role\":\"user\",\"timestamp\":1763141179183,\"turn_id\":2},{\"content\":\"Hello. OK.\",\"metadata\":{\"source\":\"asr\",\"user\":\"12345\"},\"role\":\"user\",\"timestamp\":1763141200288,\"turn_id\":3}],\"start_ts\":1763141171,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AC96DV43PT29RD85LM74VT96DN42J",
+      "channel": "event-planning-1763141170-5rlr7q",
+      "contents": [
+        {
+          "content": "",
+          "metadata": {
+            "source": "asr",
+            "user": ""
+          },
+          "role": "user",
+          "timestamp": 1763141179183,
+          "turn_id": 2
+        },
+        {
+          "content": "Hello. OK.",
+          "metadata": {
+            "source": "asr",
+            "user": "12345"
+          },
+          "role": "user",
+          "timestamp": 1763141200288,
+          "turn_id": 3
+        }
+      ],
+      "start_ts": 1763141171,
+      "status": "RUNNING"
+    }
+  }
+}

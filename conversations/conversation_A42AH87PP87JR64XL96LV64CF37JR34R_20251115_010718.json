@@ -1,0 +1,52 @@
+{
+  "agent_id": "A42AH87PP87JR64XL96LV64CF37JR34R",
+  "status": "RUNNING",
+  "channel_name": "unknown",
+  "created_at": "unknown",
+  "session_ended_at": "2025-11-15T01:07:18.445912",
+  "total_messages": 1,
+  "conversation_history": [
+    {
+      "timestamp": 1763149032329,
+      "role": "user",
+      "content": "",
+      "type": "text",
+      "metadata": {
+        "source": "asr",
+        "user": ""
+      },
+      "turn_id": 2
+    }
+  ],
+  "last_activity": 1763149032329,
+  "agent_info": {
+    "agent_id": "A42AH87PP87JR64XL96LV64CF37JR34R",
+    "message": "ok",
+    "start_ts": 1763149020,
+    "status": "RUNNING"
+  },
+  "auto_saved": true,
+  "save_reason": "session_ended",
+  "debug_info": {
+    "history_api_status": 200,
+    "history_api_response": "{\"agent_id\":\"A42AH87PP87JR64XL96LV64CF37JR34R\",\"channel\":\"event-planning-1763149018-oky6vv\",\"contents\":[{\"content\":\"\",\"metadata\":{\"source\":\"asr\",\"user\":\"\"},\"role\":\"user\",\"timestamp\":1763149032329,\"turn_id\":2}],\"start_ts\":1763149020,\"status\":\"RUNNING\"}",
+    "raw_history_data": {
+      "agent_id": "A42AH87PP87JR64XL96LV64CF37JR34R",
+      "channel": "event-planning-1763149018-oky6vv",
+      "contents": [
+        {
+          "content": "",
+          "metadata": {
+            "source": "asr",
+            "user": ""
+          },
+          "role": "user",
+          "timestamp": 1763149032329,
+          "turn_id": 2
+        }
+      ],
+      "start_ts": 1763149020,
+      "status": "RUNNING"
+    }
+  }
+}

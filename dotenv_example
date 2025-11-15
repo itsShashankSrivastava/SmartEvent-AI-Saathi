@@ -1,0 +1,30 @@
+# Agora Configuration
+AGORA_APP_ID=
+AGORA_APP_CERTIFICATE=
+AGORA_CUSTOMER_ID=
+AGORA_CUSTOMER_SECRET=
+AGORA_CONVO_AI_BASE_URL=
+AGENT_UID=
+
+# Groq LLM Configuration (OpenAI-compatible)
+GROQ_API_KEY=
+GROQ_MODEL=
+LLM_URL=
+LLM_TOKEN=
+
+# TTS Configuration - Using ElevenLabs
+TTS_VENDOR=
+ELEVENLABS_API_KEY=
+ELEVENLABS_VOICE_ID=
+ELEVENLABS_MODEL_ID=
+
+# Modalities Configuration
+INPUT_MODALITIES=
+OUTPUT_MODALITIES=
+
+# Server Configuration
+PORT=
+
+# Email Configuration for Guest Invitations
+SENDER_EMAIL=
+SENDER_PASSWORD=

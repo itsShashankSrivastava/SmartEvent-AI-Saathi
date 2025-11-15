@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartEvent AI Saathi - AI Event Planning Assistant</title>
+    <script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.20.2.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .app-container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        
+        .sidebar-header {
+            padding: 24px 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #6366f1;
+            margin-bottom: 4px;
+        }
+        
+        .logo-subtitle {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-menu {
+            flex: 1;
+            padding: 20px 0;
+        }
+        
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .nav-item:hover {
+            background: #f1f5f9;
+            color: #334155;
+        }
+        
+        .nav-item.active {
+            background: #f1f5f9;
+            color: #6366f1;
+            border-right: 3px solid #6366f1;
+        }
+        
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            opacity: 0.7;
+        }
+        
+        .user-section {
+            padding: 20px;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            background: #6366f1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .user-details h4 {
+            font-size: 14px;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+        
+        .user-details p {
+            font-size: 12px;
+            color: #64748b;
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+        
+        .header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #e2e8f0;
+            background: white;
+        }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .event-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+        
+        .event-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+        }
+        
+        .status-indicator.connecting {
+            background: #f59e0b;
+        }
+        
+        .status-indicator.disconnected {
+            background: #ef4444;
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5b5cf6;
+        }
+        
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Chat Area */
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+            background: #f8fafc;
+        }
+        
+        .message {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .message.user {
+            flex-direction: row-reverse;
+        }
+        
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .message.assistant .message-avatar {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .message.user .message-avatar {
+            background: #10b981;
+            color: white;
+        }
+        
+        .message.system .message-avatar {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .message-content {
+            background: white;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            max-width: 70%;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .message.user .message-content {
+            background: #6366f1;
+            color: white;
+        }
+        
+        .message.system .message-content {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fcd34d;
+            text-align: center;
+            max-width: 100%;
+            font-style: italic;
+        }
+        
+        .message-time {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+        
+        /* Voice Controls */
+        .voice-controls {
+            padding: 20px 24px;
+            border-top: 1px solid #e2e8f0;
+            background: white;
+        }
+        
+        .voice-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .voice-status.active {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .audio-wave {
+            width: 3px;
+            height: 16px;
+            background: #10b981;
+            margin: 0 1px;
+            border-radius: 2px;
+            animation: wave 1s infinite ease-in-out;
+        }
+        
+        .audio-wave:nth-child(2) { animation-delay: 0.1s; }
+        .audio-wave:nth-child(3) { animation-delay: 0.2s; }
+        .audio-wave:nth-child(4) { animation-delay: 0.3s; }
+        .audio-wave:nth-child(5) { animation-delay: 0.4s; }
+        
+        @keyframes wave {
+            0%, 40%, 100% { transform: scaleY(0.4); }
+            20% { transform: scaleY(1.0); }
+        }
+        
+        .control-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        /* Summary Section */
+        .summary-section {
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 24px;
+            text-align: center;
+        }
+        
+        .summary-section h3 {
+            color: #166534;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .summary-section p {
+            color: #15803d;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 240px;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .app-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            
+            .nav-menu {
+                display: flex;
+                overflow-x: auto;
+                padding: 0;
+            }
+            
+            .nav-item {
+                white-space: nowrap;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">SmartEvent AI Saathi</div>
+                <div class="logo-subtitle">AI Event Planning</div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                    </svg>
+                    Voice Planning
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2v1a1 1 0 102 0V3h4v1a1 1 0 102 0V3a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                    </svg>
+                    Events
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                    </svg>
+                    Vendors
+                </a>
+                <a href="#" class="nav-item">
+                    <svg class="nav-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+            
+            <div class="user-section">
+                <div class="user-info">
+                    <div class="user-avatar">U</div>
+                    <div class="user-details">
+                        <h4>Event Planner</h4>
+                        <p>Pro Plan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <div class="header-top">
+                    <div>
+                        <h1 class="event-title">AI Voice Planning Session</h1>
+                        <div class="event-status">
+                            <div id="statusIndicator" class="status-indicator disconnected"></div>
+                            <span id="statusText">Ready to start planning</span>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button id="startBtn" class="btn btn-primary" onclick="startVoiceSession()">
+                            Start Session
+                        </button>
+                        <button id="joinBtn" class="btn btn-secondary" onclick="joinVoiceChannel()" disabled>
+                            Connect Voice
+                        </button>
+                        
+                        <button id="muteBtn" class="btn btn-secondary" onclick="toggleMute()" title="Toggle Mute" disabled>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                <path id="muteIconPath" fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"/>
+                            </svg>
+                            <span id="muteBtnText" style="margin-left: 6px;">Mute</span>
+                        </button>
+                        <button id="uploadBtn" class="btn btn-secondary" onclick="document.getElementById('guestListFile').click()" disabled>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Upload Guest List
+                        </button>
+                        <input type="file" id="guestListFile" accept=".xlsx,.xls,.csv" style="display: none;" onchange="handleGuestListUpload(event)">
+                        <button id="stopBtn" class="btn btn-danger" onclick="stopVoiceSession()" disabled>
+                            End Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Summary Section -->
+            <div id="summarySection" class="summary-section" style="display: none;">
+                <h3>Event Planning Summary</h3>
+                <p>Your consultation has been processed and a professional event summary document has been generated.</p>
+                <button id="downloadSummaryBtn" class="btn btn-primary" onclick="downloadEventSummary()">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    Download PDF Report
+                </button>
+            </div>
+            
+            <div class="chat-area">
+                <div class="chat-messages" id="chatContainer">
+                    <div class="message system">
+                        <div class="message-avatar">AI</div>
+                        <div class="message-content">
+                            Welcome to SmartEvent AI Saathi! Click "Start Session" to begin your voice consultation.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="voice-controls">
+                    <div id="voiceStatus" class="voice-status">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"/>
+                        </svg>
+                        <span id="audioStatus">Voice channel ready</span>
+                    </div>
+                    
+                    <div id="audioWaves" class="voice-status" style="display: none;">
+                        <div class="audio-wave"></div>
+                        <div class="audio-wave"></div>
+                        <div class="audio-wave"></div>
+                        <div class="audio-wave"></div>
+                        <div class="audio-wave"></div>
+                        <span id="waveStatus">Listening...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></body>
+
+    <script>
+        // Configuration
+        const APP_ID = "47b570026b4f4da1bdc2bfc075cda91d"; 
+        const API_BASE = 'http://localhost:8000';
+        
+        // Global variables
+        let rtc = {
+            client: null,
+            localAudioTrack: null
+        };
+
+        // ADD THESE TWO LINES:
+        const unmutedIconPath = "M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z";
+        const mutedIconPath = "M2.22 2.22a.75.75 0 011.06 0L6 4.94V4a3 3 0 116 0v4.28l2.78 2.78a.75.75 0 11-1.06 1.06L2.22 3.28a.75.75 0 010-1.06zM7 8.06L13 14.06V8a3 3 0 00-6 0v.06zM10.93 17A7.001 7.001 0 003 10a1 1 0 00-2 0 9.001 9.001 0 008 8.93V21H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z";
+        
+        let agentId = null;
+        let channelName = null;
+        let token = null;
+        let isInChannel = false;
+        let currentSummaryFilename = null;
+        let conversationPolling = null;
+        let isMuted = false;
+        
+        function updateStatus(message, type) {
+            const statusText = document.getElementById('statusText');
+            const statusIndicator = document.getElementById('statusIndicator');
+            
+            statusText.textContent = message;
+            statusIndicator.className = `status-indicator ${type}`;
+        }
+        
+        function addMessage(content, type) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageEl = document.createElement('div');
+            messageEl.className = `message ${type}`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            messageContent.innerHTML = content;
+            
+            const messageTime = document.createElement('div');
+            messageTime.className = 'message-time';
+            messageTime.textContent = new Date().toLocaleTimeString();
+            
+            if (type === 'assistant') {
+                avatar.textContent = 'AI';
+            } else if (type === 'user') {
+                avatar.textContent = 'U';
+            } else {
+                avatar.textContent = '!';
+            }
+            
+            messageEl.appendChild(avatar);
+            messageEl.appendChild(messageContent);
+            messageContent.appendChild(messageTime);
+            
+            chatContainer.appendChild(messageEl);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        
+        let lastProcessedTurnId = 0;
+        
+        async function pollConversationHistory() {
+            if (!agentId) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/agent/history/${agentId}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    const contents = data.contents || [];
+                    
+                    // Process new messages
+                    contents.forEach(msg => {
+                        const turnId = msg.turn_id || 0;
+                        if (turnId > lastProcessedTurnId) {
+                            const content = msg.content || '';
+                            // if (content.trim()) {
+                            const isComplete = msg.is_final !== false && msg.interrupted !== true;
+                            // Only show complete messages that aren't interrupted
+                            if (content.trim() && isComplete) {
+                                if (msg.role === 'user') {
+                                    addMessage(content, 'user');
+                                } else if (msg.role === 'assistant') {
+                                    addMessage(content, 'assistant');
+                                }
+                            }
+                        }
+                    });
+                    
+                    // Update last processed turn ID
+                    if (contents.length > 0) {
+                        const maxTurnId = Math.max(...contents.map(msg => msg.turn_id || 0));
+                        lastProcessedTurnId = maxTurnId;
+                    }
+                }
+            } catch (error) {
+                console.error('Error polling conversation:', error);
+            }
+        }
+        
+        function startConversationPolling() {
+            if (conversationPolling) {
+                clearInterval(conversationPolling);
+            }
+            conversationPolling = setInterval(pollConversationHistory, 2000); // Poll every 2 seconds
+        }
+        
+        function stopConversationPolling() {
+            if (conversationPolling) {
+                clearInterval(conversationPolling);
+                conversationPolling = null;
+            }
+        }
+        
+        async function startVoiceSession() {
+            try {
+                updateStatus('🚀 Starting AI voice session...', 'connecting');
+                document.getElementById('startBtn').disabled = true;
+                
+                // Hide previous summary section
+                const summarySection = document.getElementById('summarySection');
+                if (summarySection) {
+                    summarySection.style.display = 'none';
+                }
+                currentSummaryFilename = null;
+                
+                // Create the agent
+                const agentRequest = {
+                    requester_id: "12345",
+                    channel_name: null // Let agent generate channel name
+                };
+                
+                // Start AI agent first
+                const agentResponse = await fetch(`${API_BASE}/agent/invite`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(agentRequest)
+                });
+                
+                if (!agentResponse.ok) {
+                    const errorData = await agentResponse.json();
+                    throw new Error(errorData.detail || 'Failed to start AI agent');
+                }
+                
+                const agentData = await agentResponse.json();
+                agentId = agentData.agent_id;
+                channelName = agentData.channel_name;
+                
+                console.log('Agent response:', agentData);
+                console.log('Channel name:', channelName);
+                
+                // Fallback if channel_name is undefined
+                if (!channelName || channelName === 'undefined') {
+                    channelName = `event-planning-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`;
+                    addMessage(`⚠️ Using fallback channel: <strong>${channelName}</strong>`, 'system');
+                }
+                
+                // Add debug info to console and page title for easy monitoring
+                console.log('=== AGENT DEBUG INFO ===');
+                console.log('Agent ID:', agentId);
+                console.log('Channel:', channelName);
+                console.log('Monitor URL:', `http://localhost:8000/agent/history/${agentId}`);
+                // document.title = `EventBot - Agent: ${agentId}`;
+                document.title = `SmartEvent AI Saathi - Agent: ${agentId}`;
+                
+                // Now generate token for the same channel
+                const tokenResponse = await fetch(`${API_BASE}/token/combined?uid=12345&channel=${channelName}`);
+                if (!tokenResponse.ok) {
+                    throw new Error('Failed to generate token');
+                }
+                const tokenData = await tokenResponse.json();
+                
+                token = tokenData.token;
+                
+                updateStatus('Ready - Click "Connect Voice" to begin consultation', 'connected');
+                document.getElementById('joinBtn').disabled = false;
+                document.getElementById('stopBtn').disabled = false;
+                
+            } catch (error) {
+                updateStatus('❌ Failed to start voice session', 'disconnected');
+                addMessage(`❌ <strong>Error:</strong> ${error.message}`, 'system');
+                document.getElementById('startBtn').disabled = false;
+                console.error('Voice session error:', error);
+            }
+        }
+        
+        async function joinVoiceChannel() {
+            try {
+                updateStatus('🎤 Connecting to voice channel...', 'connecting');
+                document.getElementById('joinBtn').disabled = true;
+                
+                // Initialize Agora RTC client with better error handling
+                rtc.client = AgoraRTC.createClient({ 
+                    mode: "rtc", 
+                    codec: "vp8"
+                });
+                
+                // Set log level for debugging
+                AgoraRTC.setLogLevel(1); // 0: DEBUG, 1: INFO, 2: WARNING, 3: ERROR, 4: NONE
+                
+                rtc.client.on("network-quality", (stats) => {
+                    console.log("Network quality:", stats);
+                });
+                
+                // Join the channel with retry logic
+                let retries = 3;
+                while (retries > 0) {
+                    try {
+                        await rtc.client.join(APP_ID, channelName, token, 12345);
+                        break;
+                    } catch (joinError) {
+                        retries--;
+                        if (retries > 0) {
+                            await new Promise(resolve => setTimeout(resolve, 2000));
+                        } else {
+                            throw joinError;
+                        }
+                    }
+                }
+                
+                // Create and publish microphone track with error handling
+                try {
+                    rtc.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack({
+                        encoderConfig: "speech_standard",
+                        AGC: true,
+                        ANS: true,
+                        AEC: true,
+                        echoCancellation: true,
+                        noiseSuppression: true,
+                        autoGainControl: true,
+                        // Additional noise reduction settings
+                        microphoneId: 'default',
+                        // Reduce microphone gain to lower background noise
+                        volume: 0.7
+                    });
+                    
+                    await rtc.client.publish([rtc.localAudioTrack]);
+                    
+                    // Monitor audio levels
+                    rtc.localAudioTrack.on("track-ended", () => {
+                        addMessage('⚠️ Microphone track ended', 'system');
+                    });
+                    
+                    // Monitor microphone volume levels
+                    let micMonitor = setInterval(() => {
+                        if (rtc.localAudioTrack) {
+                            const volume = rtc.localAudioTrack.getVolumeLevel();
+                            if (volume > 0.1) {
+                                console.log('🎤 Your voice detected, level:', volume);
+                                const waveStatus = document.getElementById('waveStatus');
+                                const audioStatus = document.getElementById('audioStatus');
+                                if (waveStatus) waveStatus.textContent = `Speaking (${Math.round(volume * 100)}%)`;
+                                if (audioStatus) audioStatus.textContent = `Speaking (${Math.round(volume * 100)}%)`;
+                            } else {
+                                const waveStatus = document.getElementById('waveStatus');
+                                const audioStatus = document.getElementById('audioStatus');
+                                if (waveStatus) waveStatus.textContent = 'Listening...';
+                                if (audioStatus) audioStatus.textContent = 'Ready to listen';
+                            }
+                        }
+                    }, 100);
+                    
+                    // Store monitor for cleanup
+                    rtc.micMonitor = micMonitor;
+                    
+                } catch (micError) {
+                    addMessage(`❌ Microphone error: ${micError.message}`, 'system');
+                    throw micError;
+                }
+                
+                // Listen for AI agent audio with better handling
+                rtc.client.on("user-published", async (user, mediaType) => {
+                    try {
+                        console.log(`User ${user.uid} published ${mediaType}`);
+                        
+                        // Subscribe to the user's media
+                        await rtc.client.subscribe(user, mediaType);
+                        console.log(`Successfully subscribed to user ${user.uid} ${mediaType}`);
+                        
+                        if (mediaType === "audio") {
+                            const remoteAudioTrack = user.audioTrack;
+                            
+                            if (remoteAudioTrack) {
+                                console.log('Remote audio track:', remoteAudioTrack);
+                                
+                                // Set volume to maximum
+                                remoteAudioTrack.setVolume(100);
+                                
+                                try {
+                                    // Play the audio track
+                                    remoteAudioTrack.play();
+                                    addMessage('AI is speaking - listen to your speakers!', 'assistant');
+                                    const audioStatus = document.getElementById('audioStatus');
+                                    const waveStatus = document.getElementById('waveStatus');
+                                    if (audioStatus) audioStatus.textContent = 'AI is responding';
+                                    if (waveStatus) waveStatus.textContent = 'AI is responding';
+                                    console.log('AI audio track playing');
+                                    
+                                } catch (playError) {
+                                    console.error('Audio play error:', playError);
+                                    addMessage(`⚠️ Audio play error: ${playError.message}`, 'system');
+                                    
+                                    // Try to enable audio on user interaction
+                                    const enableAudio = async () => {
+                                        try {
+                                            remoteAudioTrack.play();
+                                            remoteAudioTrack.setVolume(100);
+                                            addMessage('🔊 Audio enabled! AI is now speaking.', 'assistant');
+                                            document.removeEventListener('click', enableAudio);
+                                        } catch (retryError) {
+                                            console.error('Audio retry error:', retryError);
+                                            addMessage(`❌ Still can't play audio: ${retryError.message}`, 'system');
+                                        }
+                                    };
+                                    
+                                    addMessage('🖱️ <strong>Click anywhere to enable audio</strong>', 'system');
+                                    document.addEventListener('click', enableAudio, { once: true });
+                                }
+                                
+                                // Monitor AI audio track events
+                                remoteAudioTrack.on("track-ended", () => {
+                                    console.log('AI audio track ended');
+                                    addMessage('🤖 AI finished speaking', 'system');
+                                    const audioStatus = document.getElementById('audioStatus');
+                                    if (audioStatus) audioStatus.textContent = 'Ready to listen';
+                                });
+                                
+                            } else {
+                                console.error(`No audio track found for user ${user.uid}`);
+                                addMessage(`❌ No audio track found for user ${user.uid}`, 'system');
+                            }
+                        }
+                    } catch (subscribeError) {
+                        console.error('Subscribe error:', subscribeError);
+                        addMessage(`❌ Failed to subscribe to user ${user.uid}: ${subscribeError.message}`, 'system');
+                    }
+                });
+                
+                rtc.client.on("user-unpublished", (user, mediaType) => {
+                    if (mediaType === "audio") {
+                        const audioStatus = document.getElementById('audioStatus');
+                        if (audioStatus) audioStatus.textContent = 'Ready to listen';
+                    }
+                });
+                
+                rtc.client.on("user-joined", (user) => {
+                    console.log(`User ${user.uid} joined the channel`);
+                    if (user.uid == 10001) {
+                        addMessage('AI Assistant connected. You can start speaking!', 'system');
+                    }
+                });
+                
+                rtc.client.on("user-left", (user) => {
+                    if (user.uid == 10001) {
+                        addMessage('AI Assistant disconnected', 'system');
+                    }
+                });
+                
+                // Show audio indicator
+                const voiceStatus = document.getElementById('voiceStatus');
+                const audioWaves = document.getElementById('audioWaves');
+                if (voiceStatus) voiceStatus.style.display = 'none';
+                if (audioWaves) audioWaves.style.display = 'flex';
+                isInChannel = true;
+                
+                updateStatus('LIVE: Voice channel active', 'connected');
+                document.getElementById('muteBtn').disabled = false;
+                document.getElementById('uploadBtn').disabled = false;
+                
+                // Start polling for conversation updates
+                startConversationPolling();
+                
+            } catch (error) {
+                updateStatus('❌ Failed to join voice channel', 'disconnected');
+                addMessage(`❌ <strong>Voice connection error:</strong> ${error.message}`, 'system');
+                
+                // Provide specific troubleshooting based on error type
+                if (error.message.includes('INVALID_VENDOR_KEY')) {
+                    addMessage('🔑 <strong>Fix:</strong> Check Agora App ID and certificate', 'system');
+                } else if (error.message.includes('INVALID_CHANNEL_NAME')) {
+                    addMessage('📺 <strong>Fix:</strong> Channel name issue - try restarting session', 'system');
+                } else if (error.message.includes('UID_ALREADY_IN_USE')) {
+                    addMessage('👤 <strong>Fix:</strong> UID conflict - refresh page and try again', 'system');
+                } else if (error.message.includes('NETWORK_ERROR')) {
+                    addMessage('🌐 <strong>Fix:</strong> Network issue - check internet connection', 'system');
+                } else {
+                    addMessage('🔧 <strong>Try:</strong> Refresh page, check microphone permissions, or use different browser', 'system');
+                }
+                
+                document.getElementById('joinBtn').disabled = false;
+                console.error('Voice channel error:', error);
+            }
+        }
+        
+        async function testAgentSpeak() {
+            if (!agentId) {
+                addMessage('❌ No agent available for testing', 'system');
+                return;
+            }
+            
+            try {
+                addMessage('🧪 Testing AI speech...', 'system');
+                
+                const response = await fetch(`${API_BASE}/agent/${agentId}/speak`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        text: "Hello! This is a test message. If you can hear this, the audio system is working correctly. Please say something back to test the full conversation flow."
+                    })
+                });
+                
+                if (response.ok) {
+                    addMessage('✅ Test speech command sent - you should hear the AI speaking now!', 'system');
+                } else {
+                    addMessage('❌ Failed to send test speech command', 'system');
+                }
+            } catch (error) {
+                addMessage(`❌ Test speech error: ${error.message}`, 'system');
+            }
+        }
+        
+        async function stopVoiceSession() {
+            try {
+                updateStatus('⏹️ Stopping voice session...', 'connecting');
+                
+                // Leave voice channel
+                if (isInChannel && rtc.client) {
+                    if (rtc.micMonitor) {
+                        clearInterval(rtc.micMonitor);
+                    }
+                    if (rtc.localAudioTrack) {
+                        rtc.localAudioTrack.close();
+                    }
+                    await rtc.client.leave();
+                }
+                
+                // Stop AI agent and generate summary
+                if (agentId) {
+                    const response = await fetch(`${API_BASE}/agent/remove`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ agent_id: agentId })
+                    });
+                    
+                    if (response.ok) {
+                        // Generate event summary
+                        await generateEventSummary(agentId);
+                    }
+                }
+                
+                // Stop conversation polling
+                stopConversationPolling();
+                
+                // Reset state
+                agentId = null;
+                channelName = null;
+                token = null;
+                isInChannel = false;
+                lastProcessedTurnId = 0;
+                isMuted = false;
+                document.getElementById('muteBtn').disabled = true;
+                document.getElementById('uploadBtn').disabled = true;
+                
+                // Reset UI
+                updateStatus('Session ended - Ready to start new session', 'disconnected');
+                const voiceStatus = document.getElementById('voiceStatus');
+                const audioWaves = document.getElementById('audioWaves');
+                const startBtn = document.getElementById('startBtn');
+                const joinBtn = document.getElementById('joinBtn');
+                const stopBtn = document.getElementById('stopBtn');
+                
+                if (voiceStatus) voiceStatus.style.display = 'flex';
+                if (audioWaves) audioWaves.style.display = 'none';
+                if (startBtn) startBtn.disabled = false;
+                if (joinBtn) joinBtn.disabled = true;
+                if (stopBtn) stopBtn.disabled = true;
+                document.getElementById('muteBtn').disabled = true;
+                document.getElementById('uploadBtn').disabled = true;
+                
+                addMessage('Session ended. Your event summary is being generated.', 'system');
+                
+            } catch (error) {
+                addMessage(`❌ <strong>Error stopping session:</strong> ${error.message}`, 'system');
+                console.error('Stop session error:', error);
+            }
+        }
+        
+        function toggleMute() {
+            // Use .disabled check, not opacity
+            if (!rtc.localAudioTrack || document.getElementById('muteBtn').disabled) return;
+            
+            const muteIcon = document.getElementById('muteIconPath');
+            const muteText = document.getElementById('muteBtnText');
+            
+            if (isMuted) {
+                // UNMUTE
+                rtc.localAudioTrack.setEnabled(true);
+                muteIcon.setAttribute('d', unmutedIconPath);
+                muteText.textContent = 'Mute';
+                isMuted = false;
+            } else {
+                // MUTE
+                rtc.localAudioTrack.setEnabled(false);
+                muteIcon.setAttribute('d', mutedIconPath);
+                muteText.textContent = 'Unmute';
+                isMuted = true;
+            }
+        }
+        
+        // Summary Functions
+        async function generateEventSummary(agentId) {
+            try {
+                addMessage('📊 Generating your event summary document...', 'system');
+                
+                const response = await fetch(`${API_BASE}/summary/generate-from-agent/${agentId}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    currentSummaryFilename = result.filename;
+                    
+                    addMessage('Professional event summary generated successfully', 'system');
+                    
+                    // Show event details if available
+                    if (result.event_details) {
+                        const details = result.event_details;
+                        addMessage(`Event: ${details.event_type}`, 'system');
+                        if (details.guest_count > 0) {
+                            addMessage(`Guests: ${details.guest_count} people`, 'system');
+                        }
+                        if (details.venue && details.venue !== "To be determined") {
+                            addMessage(`Venue: ${details.venue}`, 'system');
+                        }
+                    }
+                    
+                    // Show summary section
+                    const summarySection = document.getElementById('summarySection');
+                    if (summarySection) summarySection.style.display = 'block';
+                    addMessage('Your event planning report is ready for download', 'system');
+                    
+                } else {
+                    const error = await response.json();
+                    addMessage(`❌ Failed to generate summary: ${error.detail}`, 'system');
+                }
+                
+            } catch (error) {
+                addMessage(`❌ Summary generation error: ${error.message}`, 'system');
+                console.error('Summary generation error:', error);
+            }
+        }
+        
+
+        
+        async function downloadEventSummary() {
+            if (!currentSummaryFilename) {
+                addMessage('No summary available to download', 'system');
+                return;
+            }
+            
+            try {
+                const downloadUrl = `${API_BASE}/summary/download/${currentSummaryFilename}`;
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = currentSummaryFilename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                addMessage('Professional event summary downloaded successfully', 'system');
+                
+            } catch (error) {
+                addMessage(`Error downloading summary: ${error.message}`, 'system');
+            }
+        }
+        
+        async function handleGuestListUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            addMessage(`📤 Uploading guest list: ${file.name}`, 'system');
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            if (agentId) formData.append('agent_id', agentId);
+            
+            try {
+                const response = await fetch(`${API_BASE}/agent/upload-guest-list`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    addMessage(`✅ Guest list uploaded successfully! ${result.total_guests} guests found.`, 'system');
+                    addMessage(`📧 Invitations will be sent after event confirmation.`, 'system');
+                } else {
+                    const error = await response.json();
+                    addMessage(`❌ Upload failed: ${error.detail}`, 'system');
+                }
+            } catch (error) {
+                addMessage(`❌ Upload error: ${error.message}`, 'system');
+            }
+            
+            event.target.value = '';
+        }
+        
+        // Initialize
+        window.onload = function() {
+            // Check browser compatibility
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                addMessage('Browser not supported. Please use Chrome, Firefox, or Safari for microphone access.', 'system');
+                const startBtn = document.getElementById('startBtn');
+                if (startBtn) startBtn.disabled = true;
+            }
+            
+            // Initialize application
+        };
+    </script>
+</body>
+</html>
