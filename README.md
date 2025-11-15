@@ -2,6 +2,16 @@
 
 An AI-powered event planning assistant that helps organize community events, family gatherings, and group outings through natural voice conversations. This system provides end-to-end event planning capabilities with intelligent venue and vendor recommendations, budget estimation, and automated conversation summaries.
 
+## Demo Video Link
+https://drive.google.com/file/d/1neNF6KA_KfRX15meyiKEEfDLQEXCdF5f/view?usp=drive_link
+
+## Application Screenshots
+<img width="1919" height="946" alt="Screenshot 2025-11-15 054916" src="https://github.com/user-attachments/assets/3735a6a7-bfd9-4ea0-aa01-209e10ffc987" />
+<img width="1840" height="834" alt="Screenshot 2025-11-15 061221" src="https://github.com/user-attachments/assets/e1a55d64-8c6c-4b31-aabc-cf28b44e6d22" />
+<img width="1848" height="823" alt="Screenshot 2025-11-15 075647" src="https://github.com/user-attachments/assets/44be5b2f-9c1c-4bda-87e9-4dec9b7ff547" />
+<img width="598" height="829" alt="image (1)" src="https://github.com/user-attachments/assets/a0af2230-225b-4b5c-a1a3-6bcc57ed524c" />
+
+
 ## 🎯 Project Overview
 
 This project creates a complete voice-first event planning experience where users can:
